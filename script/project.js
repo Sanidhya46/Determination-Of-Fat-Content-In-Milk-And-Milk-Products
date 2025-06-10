@@ -58,7 +58,7 @@ function start(){
     //    statuses = 1;
         startbutton.style.visibility="hidden"
        f=1;
-        ins.innerText="Click on distilled water bottle to measure 100mL of distilled water"
+        ins.innerText="Click on The pipette to measure 10 ml of h2so4 solution"
         pipette1();
   
     }
