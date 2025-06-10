@@ -1,0 +1,500 @@
+/* // Get references to DOM elements
+const instructionOverlay = document.getElementById('instruction-overlay');
+const cork = document.getElementById('cork');
+const h2so4Solution = document.getElementById('h2so4-solution');
+const pipetteContainer = document.getElementById('pipette-container');
+const pipette = document.getElementById('pipette');
+const pipetteLiquid = document.getElementById('pipette-liquid');
+const butyrometer = document.getElementById('butyrometer_with_stand');
+const butyrometerLiquid = document.getElementById('butyrometer_liquid');
+const instructionText = document.getElementById('instruction-text');
+const step2Btn = document.getElementById('step2Btn');
+
+// State tracking variables
+let step = 0;
+let corkStep = 0;
+let pipetteStage = 0;
+let showLiquid = false;
+
+// Update the instruction text
+function updateInstructions() {
+    const instructions = [
+        'Step 1: Click the cork on the H₂SO₄ bottle to open it.',
+        'Step 2: Click the pipette to draw 10 ml of H₂SO₄.',
+        'Step 3: Click the pipette again to transfer H₂SO₄ to the butyrometer.',
+        '✅ H₂SO₄ has been added to the butyrometer.'
+    ];
+    instructionText.innerText = instructions[step] || '';
+}
+
+// Handle cork click animation
+function handleCorkClick() {
+    if (step === 0 && corkStep === 0) {
+        corkStep = 1;
+
+        cork.style.top = '18.75vh';  // moves up (approx 300px)
+        setTimeout(() => {
+            cork.style.left = '16.875vw'; // moves right (approx 270px)
+            setTimeout(() => {
+                cork.style.top = '34.7vh'; // moves down (approx 555px)
+                setTimeout(() => {
+                    step = 1;
+                    updateInstructions();
+                }, 1000);
+            }, 500);
+        }, 1000);
+    }
+}
+
+// Handle pipette click animations
+function handlePipetteClick() {
+    if (step === 1 && pipetteStage === 0) {
+        pipetteStage = 1;
+
+        // Move pipette upright
+        pipette.style.transform = 'rotate(0deg)';
+        pipetteContainer.style.bottom = '0.3vh';
+        pipetteContainer.style.left = '37.5vw';
+
+        setTimeout(() => {
+            pipetteStage = 2;
+            pipetteContainer.style.bottom = '18.1vh';  // approx 290px
+            pipetteContainer.style.left = '11.25vw';
+
+            setTimeout(() => {
+                pipetteStage = 3;
+                pipetteContainer.style.bottom = '10vh';
+
+                setTimeout(() => {
+                    pipetteLiquid.style.opacity = '1';
+                    showLiquid = true;
+                    step = 2;
+                    updateInstructions();
+                }, 1000);
+            }, 800);
+        }, 500);
+
+    } else if (step === 2) {
+        // Move pipette up before transfer
+        pipetteContainer.style.bottom = '15.6vh';
+
+        setTimeout(() => {
+            pipetteContainer.style.left = '64vw'; // above butyrometer approx
+            pipetteContainer.style.bottom = '28.1vh';
+
+            setTimeout(() => {
+                pipetteContainer.style.bottom = '20.6vh';
+
+                setTimeout(() => {
+                    pipetteLiquid.style.opacity = '0';
+
+                    setTimeout(() => {
+                        butyrometerLiquid.style.opacity = '1';
+                        step = 3;
+                        updateInstructions();
+
+                        setTimeout(() => {
+                            pipetteContainer.style.bottom = '-3.4vh';
+                            pipetteContainer.style.left = '33.1vw';
+                            pipette.style.transform = 'rotate(-90deg)';
+
+                            completeStep1();
+
+                        }, 2000);
+                    }, 1000);
+                }, 800);
+            }, 800);
+        }, 500);
+    }
+}
+
+function completeStep1() {
+    alert("Step 1 completed!");
+    pipette.removeEventListener('click', handlePipetteClick);
+    cork.removeEventListener('click', handleCorkClick);
+    step2Btn.classList.remove('hidden');
+}
+
+// Event Listeners
+cork.addEventListener('click', handleCorkClick);
+pipette.addEventListener('click', handlePipetteClick);
+
+// Initialize instructions
+updateInstructions();
+
+
+//    STEP 2.JS  
+
+// Get references to DOM elements
+const instructionOverlay = document.getElementById('instruction-overlay');
+const milkBeaker = document.getElementById('milk-beaker');
+const pipetteContainer = document.getElementById('pipette-container');
+const pipette = document.getElementById('pipette');
+const pipetteLiquid = document.getElementById('pipette_milk');
+const butyrometer = document.getElementById('butyrometer_with_stand');
+const butyrometerLiquid = document.getElementById('brown_butyrometer_sol');
+const instructionText = document.getElementById('instruction-text');
+const milkOverlay = document.getElementById('milk-beaker-overlay');
+
+window.onload = () => {
+  console.log("Step 2 Loaded");
+  // You can add logic specific to step 2 here
+};
+// State tracking
+let step = 0;
+let pipetteStage = 0;
+
+// Update instructions text
+function updateInstructions() {
+    const instructions = [
+        'Step 1: Click on the pipette to draw 10.75 ml of milk.',
+        'Step 2: Click on the pipette to transfer the milk to the butyrometer.',
+        '✅ Milk has been transferred to the butyrometer.'
+    ];
+    instructionText.innerText = instructions[step] || '';
+}
+
+// Handle pipette click animation
+function handlePipetteClick() {
+    if (step === 0 && pipetteStage === 0) {
+        pipetteStage = 1;
+
+        // Rotate pipette upright and move it above the beaker
+        pipette.style.transform = 'rotate(0deg)';
+        pipetteContainer.style.transition = 'all 0.5s ease-in-out';
+        pipetteContainer.style.left = '600px';
+        pipetteContainer.style.bottom = '5px';
+
+        setTimeout(() => {
+            pipetteContainer.style.transition = 'all 0.8s ease-in-out';
+            pipetteContainer.style.left = '210px';
+            pipetteContainer.style.bottom = '290px';
+
+            setTimeout(() => {
+                pipetteContainer.style.bottom = '160px'; // Lower into milk
+
+                setTimeout(() => {
+    pipetteLiquid.style.opacity = '1'; // Show liquid drawn
+
+    // ⬇️ FADE OUT OVERLAY TO SIMULATE MILK REMOVAL
+    milkOverlay.style.transition = 'opacity 1s ease-in-out';
+    milkOverlay.style.opacity = '0';
+
+    step = 1;
+    updateInstructions();
+}, 1000);
+            }, 800);
+        }, 500);
+
+    } else if (step === 1) {
+        // Move pipette up with milk
+        pipetteContainer.style.bottom = '250px';
+
+        setTimeout(() => {
+            // Move to butyrometer
+            pipetteContainer.style.left = '1024px';
+            pipetteContainer.style.bottom = '450px';
+
+            setTimeout(() => {
+                // Lower to pour into butyrometer
+                pipetteContainer.style.bottom = '330px';
+
+                setTimeout(() => {
+                    pipetteLiquid.style.opacity = '0'; // Empty pipette
+
+                    setTimeout(() => {
+                        butyrometerLiquid.style.opacity = '1'; // Show milk in butyrometer
+                        step = 2;
+                        updateInstructions();
+                    
+                        // Reset pipette
+                        setTimeout(() => {
+                            pipetteContainer.style.bottom = '-55px';
+                            pipetteContainer.style.left = '530px';
+                            pipette.style.transform = 'rotate(-90deg)';
+                        }, 2000);
+                    }, 1000);
+                }, 800);
+            }, 800);
+        }, 500);
+    }
+}
+
+// Initial visual setup
+function initializePositions() {
+    pipette.style.transform = 'rotate(-90deg)';
+    pipetteContainer.style.bottom = '-55px';
+    pipetteContainer.style.left = '530px';
+    pipetteContainer.style.position = 'absolute'; // Ensure movable
+    pipetteContainer.style.transition = 'all 0.5s ease-in-out';
+
+    milkBeaker.style.opacity = '1';
+    pipetteLiquid.style.opacity = '0';
+    butyrometerLiquid.style.opacity = '0';
+}
+
+// Add event listener
+pipette.addEventListener('click', handlePipetteClick);
+
+// Run setup
+initializePositions();
+updateInstructions();
+
+
+
+
+  // STYLE.CSS
+
+
+
+  body {
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: relative;
+    font-family: Arial, sans-serif;
+}
+
+.scale-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    transform-origin: top left;
+    background-image: url('../images/bgAsset.png'); /* 🔁 Add your image path here */
+    background-size: 100% 100%;  /* Ensure it fills entire container */
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+.instruction-overlay {
+    position: absolute;
+    top: 1vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(15, 234, 237, 0.9);
+    padding: 1vw;
+    border-radius: 0.5vw;
+    box-shadow: 0 0.2vw 0.5vw rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    z-index: 100;
+    text-align: center;
+    color: #931d1d;
+    width: 90vw;
+    max-width: 600px;
+}
+
+.instrument {
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+    z-index: 10;
+}
+
+#cork {
+    width: 6.5vw;
+    cursor: pointer;
+    z-index: 15;
+    top: 26.9vh;   /* 430px approx on 1600px height */
+    left: 9.9vw;   /* 159px approx on 1600px width */
+}
+
+#beaker {
+    bottom: 5vh;
+    left: 10vw;
+    width: 6.4vw;
+    z-index: 20;
+}
+
+#h2so4-solution {
+    bottom: 5vh;
+    left: 10vw;
+    width: 6.35vw;
+    z-index: 10;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+#pipette-container {
+    bottom: -3.4vh; /* -55px */
+    left: 33.1vw; /* 530px */
+    transition: all 0.5s ease-in-out;
+    z-index: 25;
+}
+
+#pipette {
+    width: 4vw;
+    cursor: pointer;
+    transform: rotate(-90deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+#pipette-liquid {
+    position: absolute;
+    bottom: 0.05vh;
+    width: 1vw;
+    height: 2.65vh;
+    left: 1.55vw;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    z-index: -2;
+}
+
+#butyrometer_with_stand {
+    bottom: 2.5vh;
+    right: 18.75vw;
+    width: 26.25vw;
+}
+
+#butyrometer_liquid {
+    position: absolute;
+    bottom: 6.9vh;
+    right: 29vw;
+    width: 2vw;
+    height: 4.75vh;
+    border-radius: 1vw;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 15;
+}
+
+#step2Btn {
+    position: fixed;
+    bottom: 2vh;
+    right: 2vw;
+    padding: 0.75vw 1.5vw;
+    font-size: 1.1vw;
+    cursor: pointer;
+    border: none;
+    background-color: #0feaed;
+    color: #931d1d;
+    font-weight: bold;
+    border-radius: 0.5vw;
+    box-shadow: 0 0.2vw 0.5vw rgba(0,0,0,0.2);
+    z-index: 200;
+}
+
+/* Hide button by default */
+.hidden {
+    display: none !important;
+}
+
+
+/* Responsive scaling
+ @media (max-height: 1000px) {
+    .scale-container {
+        transform: scale(1.0);
+    }
+}
+
+@media (max-height: 0px) {
+    .scale-container {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 600px) {
+    .scale-container {
+        transform: scale(0.6);
+    }
+}  */ */
+
+
+
+///   old.html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chemistry Experiment</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="scale-container">
+    <!-- Instruction Text -->
+    <div id="instruction-overlay" class="instruction-overlay w-full font-bold border-2 p-4 shadow">
+      <span id="instruction-text">Step 1: Click the cork on the H₂SO₄ bottle to open it.</span>
+    </div>
+
+    <!-- Popup for milk step -->
+    <div id="milk-popup" class="hidden fixed top-10 left-1/2 transform -translate-x-1/2 bg-yellow-100 border border-yellow-400 text-yellow-800 px-6 py-3 rounded shadow z-50 font-semibold">
+      Now add milk to butyrometer
+    </div>
+
+    <!-- Instruments and Objects -->
+    <img id="cork" class="instrument" src="images/sulphuric-acid-cork.png" alt="Cork" />
+    <img id="beaker" class="instrument" src="images/sulphuric-acid.png" alt="H2SO4 Beaker" />
+    <img id="h2so4-solution" class="instrument" src="images/sulphuric-acid-solution.png" alt="H2SO4 Solution" />
+
+    <div id="pipette-container" class="instrument">
+      <img id="pipette" src="images/pipette_empty.png" alt="Empty Pipette" />
+      <img id="pipette_milk" src="images/pipette_milk_10.75.png" alt="Liquid in Pipette" />
+    </div>
+
+    <img id="butyrometer_with_stand" class="instrument" src="images/butyrometer_with_stand4.png" alt="Empty Butyrometer" />
+    <img id="butyrometer_liquid" class="butyrometer_liquid" src="images/butyrometer_h2so4.png" alt="Butyrometer with Acid" />
+
+    <button id="step2Btn" class="hidden" onclick="completeStep1()">Go to Step 2</button>
+
+  </div>
+
+  <!-- Step logic script container -->
+  <script id="step-script" src="/script/step1.js"></script>
+  <script>
+ // Wait 10 seconds (or however long your animation takes)
+</script>
+</body>
+</html>
+
+
+//   step2.html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chemistry Experiment</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Instruction Text -->
+    <div id="instruction-overlay" class="instruction-overlay w-full font-bold border-2 p-4 shadow">
+      <span id="instruction-text">Step 1: Click the pipette to draw 10.75ml milk.</span>
+    </div>
+
+    <!-- Popup for milk step -->
+    <div id="milk-popup" class="hidden fixed top-10 left-1/2 transform -translate-x-1/2 bg-yellow-100 border border-yellow-400 text-yellow-800 px-6 py-3 rounded shadow z-50 font-semibold">
+      Now add milk to butyrometer
+    </div>
+
+    <!-- Instruments and Objects -->
+    <img id="milk-beaker" class="milk-beaker" src="images/milk_beaker.png" alt="Milk Beaker" />
+    <img id="milk-beaker-overlay" class="milk_beaker_overlay" src="images/10.75milk_in_beaker.png" alt="Milk Beaker" />
+    <img id="pipette_milk" class="instrument" src="images/pipette_milk_10.75.png" alt="Pipette with Milk" />
+    <img id="brown_butyrometer_sol" class="instrument" src="images/brown_butyrometer_sol.png" alt="Final Solution" /> 
+
+    <div id="pipette-container" class="instrument">
+      <img id="pipette" src="images/pipette_empty.png" alt="Empty Pipette" />
+      <img id="pipette-liquid" src="images/pipette_h2so4_10ml.png" alt="Liquid in Pipette" />
+    </div>
+
+    <img id="butyrometer_with_stand" class="instrument" src="images/butyrometer_with_stand4.png" alt="Empty Butyrometer" />
+
+    <button id="step2Btn" class="hidden" onclick="completeStep1()">Go to Step 2</button>
+<!-- Milk-related Images -->
+
+     
+  </div>
+
+  <!-- Step logic script container -->
+  <script id="step-script" src="/script/step2.js"></script>
+  <script>
+ // Wait 10 seconds (or however long your animation takes)
+</script>
+</body>
+</html>
