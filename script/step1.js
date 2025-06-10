@@ -109,9 +109,9 @@ function pipette1() {
                         f = 3;
                     
                      }, 1000);
-                },0);
-            }, 0);
-        }, 0);
+                },1000);
+            }, 1000);
+        }, 1000);
     }else{console.log("nothing2")}}
 )}else{console.log("nothing")}};
 function pipette2() {
@@ -172,12 +172,12 @@ function pipette2() {
                                                 //     ins.innerText = changeins; // Update instruction message
                                                 // }, 1000);
                                                 f=5;
-                                            }, 0);
-                                        }, 0);
-                                    }, 0);
-                                },0);
-                            }, 0);
-                        }, 0);
+                                            }, 1000);
+                                        }, 1000);
+                                    }, 1000);
+                                },1000);
+                            }, 1000);
+                        }, 1000);
     }else{console.log("ghnta")}
 }
 
@@ -283,11 +283,11 @@ function pipette4() {
                 }, 1000);
 
                     
-                }, 0);
+                }, 1000);
                     
-                }, 0);
-            }, 0);
-        }, 0)
+                }, 1000);
+            }, 1000);
+        }, 1000)
     
 }
 }
