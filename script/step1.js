@@ -25,9 +25,10 @@ let isocap = document.querySelector("#iso_cap")
 let isoamylsol = document.querySelector("#iso_amyl_sol")
 let pipetteamyl = document.querySelector("#pipette_amyl")
 
-
+const straight_butyrometer_amyl = document.querySelector("#straight_butyrometer_amyl")
+const butyrometer = document.querySelector("#butyrometer")
 let m100 = document.querySelector("#m100")
-
+const tilted_butyrometer = document.querySelector("#tilted_butyrometer_amyl")
 
 console.log("stp1");
 
@@ -230,7 +231,7 @@ function pipette4() {
         // Step 1: Move pipette to milk beaker (around 70px right from H₂SO₄ ≈ 52%)
       
         pipette.style.transform = "translate(607%,-180%) ";
-              pm.style.bottom = "60%"; 
+              pm.style.bottom = "64%"; 
              pm.style.opacity = "100%";
            
         setTimeout(() => {
@@ -306,6 +307,8 @@ function pipette5() {
         yb.style.opacity = "0%";
         Cork.style.opacity = "100%";
          isocap.addEventListener("click", function () {
+           if (f === 101) {
+        f = 102;
     setTimeout(function () {
         isocap.style.transform = "translate(0%,-150%)";
          
@@ -315,6 +318,8 @@ function pipette5() {
          isocap.style.transform = "translate(160%,  500%)";
          ins.innerText = changeins5;
            pipette.addEventListener("click", function () {
+                  if (f === 102) {
+        f = 103;
                   setTimeout(function () {
             pipette.style.rotate = "0deg";
             pipette.style.transform = "translate(0%,-150%)";
@@ -339,11 +344,11 @@ function pipette5() {
                setTimeout(function () {
            
             pipette.style.transform = "translate(0%,-150%)";
-              pipetteamyl.style.bottom = "47%";
+              pipetteamyl.style.bottom = "51%";
                             setTimeout(function () {
            
             pipette.style.transform = "translate(0%,-180%)";
-            pipetteamyl.style.bottom = "59%";
+            pipetteamyl.style.bottom = "63.5%";
               
               
                                      setTimeout(function () {
@@ -353,7 +358,7 @@ function pipette5() {
                setTimeout(function () {
            
             pipette.style.transform = "translate(1506%,-170%)";
-            pipetteamyl.style.bottom = "54.9%";
+            pipetteamyl.style.bottom = "57.9%";
             
               
               setTimeout(function () {
@@ -363,18 +368,20 @@ function pipette5() {
             
               setTimeout(function () {
              
-            amyldrop1.style.bottom = "48%"
-            // pipetteamyl.style.height = "0%";
+            amyldrop1.style.bottom = "54%"
+            pipetteamyl.style.height = "0%";
             
               
               setTimeout(function () {
              
             amyldrop2.style.opacity = "100%";
-            // pipetteamyl.style.height = "0%";
+              amyldrop2.style.bottom = "40%";
+              amyldrop1.style.opacity = "0%";
+            pipetteamyl.style.height = "0%";
             
               setTimeout(function () {
              
-            amyldrop2.style.bottom = "48%";
+          
             
             // pipetteamyl.style.height = "0%";
             pipetteamyl.style.opacity = "0%";
@@ -384,7 +391,7 @@ function pipette5() {
             amyldrop2.style.opacity = "0%";
             amyldrop1.style.opacity = "0%";
             
-            // pipetteamyl.style.height = "0%";
+            pipetteamyl.style.height = "0%";
             
               
               setTimeout(function () {
@@ -407,13 +414,112 @@ function pipette5() {
                   ins.innerText = changeins7;
       
                          Cork.addEventListener("click", function () {
+                             if (f === 103) {
+        f = 104;
                               Cork.style.transform = "translate(0%, -850%) rotate(0deg)";
                                 setTimeout(function () {
                                         Cork.style.transform = "translate(0%, -850%)rotate(0deg)";
                                         setTimeout(function () {
-                                        Cork.style.transform = "translate(767%, -850%)rotate(0deg)";
+                                        Cork.style.transform = "translate(766.5%, -850%)rotate(0deg)";
                                              setTimeout(function () {
-                                        Cork.style.transform = "translate(767%, -725%)rotate(0deg)";
+                                        Cork.style.transform = "translate(766.5%, -748.9%)rotate(0deg)";
+                                       
+                                         
+                                          finalSol.style.visibility = "hidden";
+                                          Cork.style.visiblittly = "hidden";
+                                 
+                                             setTimeout(function () {
+                                                 straight_butyrometer_amyl.style.visibility = "visible";
+                                                  setTimeout(function () {
+                                                   straight_butyrometer_amyl.style.transition = "0s"
+                                                     butyrometer.style.transition = "0s"
+                                                   Cork.style.transition = "0s"
+                                                        butyrometer.style.visibility = "hidden";
+                                                          Cork.style.opacity = "0%";
+                                                          straight_butyrometer_amyl.style.transition = "1s"
+                                                          ins.innerText = "Click on the butyrometer to shake it gently for to put into centrifuge to accomplish the process of centrifugation"
+                                        straight_butyrometer_amyl.addEventListener("click", function () {
+                                             if (f === 104) {
+        f = 105;
+                                            straight_butyrometer_amyl.style.bottom = "45%";
+                                     
+                                            setTimeout(function () {
+                                                
+                                            straight_butyrometer_amyl.style.left = "47%";
+                                              setTimeout(function () {
+                                
+                                            straight_butyrometer_amyl.style.bottom = "35%";
+                                                setTimeout(function () {
+                                                     straight_butyrometer_amyl.style.transition = "1s";
+                                                     tilted_butyrometer.style.transition = "1s";
+                                            straight_butyrometer_amyl.style.transform = "rotate(180deg)";
+                                              setTimeout(function () {
+                                                Cork.style.opacity = "0%";
+                                                   
+                                                     setTimeout(function () {
+                                                      tilted_butyrometer.style.visibility = "visible";
+                                                        // straight_butyrometer_amyl.style.visibility = "hidden";
+                                                    
+                                                      //   straight_butyrometer_amyl.style.transform = "rotate(180deg)";
+                                                 
+                                                         setTimeout(function () {
+                                     
+                                                    straight_butyrometer_amyl.style.opacity = "0%";
+                                             straight_butyrometer_amyl.style.transform = "rotate(180deg)"
+                                              
+                                            tilted_butyrometer.style.transform = "rotate(180deg)";
+                                           
+                                              setTimeout(function () {
+                                                 straight_butyrometer_amyl.style.opacity = "100%";
+                                                  // straight_butyrometer_amyl.style.visibility = "visible";
+                                               tilted_butyrometer.style.opacity = "0%";
+
+                                                        straight_butyrometer_amyl.style.transform = "rotate(180deg)"    
+                                    
+                                           
+
+                                                           setTimeout(function () {
+                                                         
+                                                     straight_butyrometer_amyl.style.transition = "1s"
+                                                        straight_butyrometer_amyl.style.transform = "rotate(0deg)";
+                                                                       setTimeout(function () {
+                                                              straight_butyrometer_amyl.style.left = "72.89%";
+                                                                 
+                                                                               setTimeout(function () {
+                                                     
+                                                                    straight_butyrometer_amyl.style.bottom = "12.0%";
+                                                                    f=150;
+                                                                                ins.innerText="click on Next button"
+                                    startbutton.style.visibility="visible"
+                                    startbutton.innerText="Next" 
+         
+
+                                                          },  1000);  
+                                                          },  1000);  
+                                                                   
+
+                                                          },  1000);  
+                                                          },  1000);  
+                                           
+                                          },  1000);    
+                                             
+                                          },  1000);    
+                                                     
+                                              },  2000);  
+                                           
+                                          },  1000);    
+                                             
+                                          },  1000);   
+                                              
+                                             
+                                          },  1000);                 
+                              
+                              }else{console.log("error")}              
+                                }, 1000);
+                                        });                 
+                                },  1000);
+
+
                             //                butyrometer.addEventListener("click", function () {
                             //                    if(f==101){
                             //                 f=102;
@@ -513,6 +619,7 @@ function pipette5() {
                                 },  1000);
                                 },  1000);
                                 },  1000);
+                              }else{console.log("error")}
                          });
               
                   }, 1000);
@@ -584,6 +691,7 @@ function pipette5() {
                   }, 1000);
                   }, 1000);
                   }, 1000);
+                    }else{console.log("error")}
                 });
           }, 1000);
           }, 1000);
@@ -591,6 +699,7 @@ function pipette5() {
        
 
     }, 1000);
+  }else{console.log("error")}
 });   
         
     }

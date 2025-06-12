@@ -42,7 +42,7 @@ let tablesdiv = document.querySelector("#tablesdiv")
 let inftext = document.querySelector("#inftext")
 let stp23 = document.querySelector("#stp23")
 let stp33 = document.querySelector("#stp33")
-
+let Set = document.querySelector("#Set")
 let stp15 = document.querySelector("#stp15")
 let stp63 = document.querySelector("#stp63")
 let stp32 = document.querySelector("#stp32")
@@ -83,76 +83,45 @@ function start(){
        stp70.style.visibility = "visible";
        stp70.style.opacity = "100%";
         startbutton.style.visibility="hidden"
-       
+          
         ins.innerText=" Click on the iso amyl cap to open it "
     }
-    // if(f===150){
-    //         console.log("Calling waterbath1() now");
-    //     waterbath1();
-    //     // stp12.style.visibility="hidden"
-    //      stp13.style.visibility="hidden"
-    //      stp63.style.visibility = "hidden"
+    else if(f===150){
+            console.log("Calling waterbath1() now");
+        // waterbath1();
+        // stp12.style.visibility="hidden"
+         stp13.style.visibility="hidden"
+         stp63.style.visibility = "hidden"
+      
+            stp70.style.visibility = "hidden"
+            stp70.style.opacity = "0%";
+          startbutton.style.visibility="hidden"
+           stp993.style.visibility = "visible";
+           stp993.style.opacity =  "100%";
+           straight_butyrometer_amyl.style.opacity = "0%";
          
-     
-    //     startbutton.style.visibility="hidden"
-    //     // observer()
-    //     // deslid=lid4
-    //     // petridish=petri1
-    //     // pbread=pbread1
-    //     // petrileft="39.5%"
-    //     // pbreadleft="39.5%"
-    //     // st3="Click on dessicator S1's lid to open it and take out the sample"
-    //     // ins.innerText=st3
+        startbutton.style.visibility="hidden"
+         stp23.style.visibility="hidden"
+         ins.innerText = "Click on the off button of waterbath to on the water bath"
+      
 
-    // }
-    // else if(f==300){
-    //        centrifuge();   
-    //     // stp12.style.visibility = "hidden"
-    //     stp13.style.visibility = "hidden"
-    //     stp63.style.visibility = "hidden"
-    //     stp23.style.visibility="hidden"
-    //     startbutton.style.visibility="hidden"
-    //     stp23.style.visibility = "hidden"
-
+    }
+    else if(f===300){
         
-    //     // deslid=lid4
-    //     // petridish=petri1
-    //     // pbread=pbread1
-    //     // petrileft="39.5%"
-    //     // pbreadleft="39.5%"
-    //     // st3="Click on dessicator S1's lid to open it and take out the sample"
-    //     // ins.innerText=st3
-    //     // f=200
-    // }
-    // else if(f==400){
-    //     //   stp12.style.visibility = "hidden"
-    //        stp15.style.visibility = "hidden"
-    //         stp32.style.visibility = "hidden"
-    //         stp23.style.visibility = "visible";
-    //     // startbutton.style.visibility="hidden"
-    //     // observer()
-    //     // tablesdiv.style.opacity="100%"
-    //     // f=500
-    //     // setTimeout(function(){
-    //     //     ins.innerText="Click 'Inference' button to see the experiment Outcome"
-    //     //     startbutton.innerText="Inference"
-    //     //     startbutton.style.visibility="visible"
-    //     // },5000)
-    // }
-    // else if(f==500){
-    //     // observe.style.visibility="visible"
-    //     // observe.style.opacity="100%"
-    //     // obtext.style.top="5%"
-    //     // obtext.style.left="40%"
-    //     // obtext.style.fontSize="5vw"
-    //     // startbutton.style.visibility="hidden"
-    //     // obtext.innerText="Inference"
-    //     // tablesdiv.style.opacity="0%"
-    //     // setTimeout(function(){
-    //     //     inftext.style.opacity="100%"
-    //     //     tablesdiv.style.visibility="hidden"
-    //     // },2000)
-    // }
+        // stp12.style.visibility = "hidden"
+        stp13.style.visibility = "hidden";
+        stp63.style.visibility = "hidden";
+        stp23.style.visibility="hidden";
+        startbutton.style.visibility="hidden";
+      stp32.style.visibility = "visible";
+           stp993.style.visibility = "hidden";
+            straight_butyrometer3.style.visibility =  "hidden";
+              stp33.style.visibility = "visible";
+       Set.style.visibility = "visible";
+        ins.innerText = "Click on the open button of centrifuge to open it"
+     
+    }
+ 
 }
 
 
