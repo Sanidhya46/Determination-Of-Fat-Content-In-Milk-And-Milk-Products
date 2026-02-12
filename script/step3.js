@@ -18,6 +18,9 @@ const tempIncreaseSwitch = document.getElementById("Temp_increase_switch");
 const tempDecreaseSwitch = document.getElementById("Temp_decrease_switch");
 
 const startStop = document.getElementById("Start_Stop");
+
+const clock1 = document.getElementById("clock1");
+
 const offstartStop = document.getElementById("Off_Start_Stop");
 // const upOffSwitch = document.getElementById("upOffSwitch");
 // const upOnSwitch = document.getElementById("Up_on_switch");
@@ -28,7 +31,7 @@ const rpmIncreaseButton = document.getElementById("rpm_increase_button");
 const timeDecreaseButton = document.getElementById("time_decrease_switch");
 const timeIncreaseButton = document.getElementById("Time_increase_switch");
 
-
+const timerDisplay33 = document.getElementById("timerDisplay33");
 const finalfatsolution = document.getElementById("finalfatsolution");
 
 
@@ -122,6 +125,7 @@ function centrifuge() {
    pipette45.addEventListener("click", () => {
    if(f===300){
      console.log("open  gate")
+     
    f=301;
     console.log("close button");
   ins.innerText =  "Click on the pipette to draw 21.75 mL water and pour it into the another butyrometer";
@@ -135,7 +139,7 @@ function centrifuge() {
       // closeButton.style.transform = "scale(1)";
       // closeButton.style.borderRadius = "40%";
 
-       pipette45.style.left = "50%";
+       pipette45.style.left = "45%";
 
       setTimeout(() => {
 
@@ -464,6 +468,9 @@ setTimeout(() => {
          butyrometer3.style.opacity = "0%";
            butyrometer.style.visibility = "hidden";
 
+           timerDisplay33.style.left = "40%";
+           clock1.style.left = "37%";
+           
            offSwitch.addEventListener("click", function () {
             if(f===312){
                f=313
@@ -565,11 +572,11 @@ setTimeout(() => {
         let currentTime = timerValue;
       
         const timerDisplay1 = document.getElementById("timerDisplay1");
-        const timerDisplay2 = document.getElementById("timerDisplay2");
+        const timerDisplay33 = document.getElementById("timerDisplay33");
       
         actualTempDisplay.textContent = `${actualTemp}°C`;
         timerDisplay1.style.display = "block";
-        timerDisplay2.style.display = "block";
+        timerDisplay33.style.display = "block";
       
         let secondsPassed = 0;
       
@@ -648,7 +655,7 @@ setTimeout(() => {
                       // offSwitch.style.opacity = "100%";
       
                       // tilted_butyrometer1.style.visibility = "hidden";
-                      // timerDisplay2.style.visibility = "hidden";
+                      // timerDisplay33.style.visibility = "hidden";
                       // timerDisplay1.style.visibility = "hidden";
       
                       // actualTempDisplay.style.display = "none";
@@ -725,23 +732,23 @@ setTimeout(() => {
 
          
 }}, 0);
-}, 0);
-}, 0);
-}, 0);
-}, 0);
-}, 0);
+}, 1000);
+}, 1000);
+}, 1000);
+}, 1000);
+}, 1000);
 
 
-}, 0);
-}, 0);
+}, 1000);
+}, 1000);
 
-}, 0);
+}, 1000);
           
-}, 0);
+}, 1000);
 
       
-}, 0);
-}, 0);
+}, 1000);
+}, 1000);
 
   }else{console.log("no")}});
 }
@@ -753,10 +760,10 @@ function startTimer() {
   let currentTime = 180; // 5 minutes = 300 secondsf
   console.log("12234342");
   let secondsPassed = 0;
-  const timerDisplay2 = document.getElementById("timerDisplay2");
+  const timerDisplay33 = document.getElementById("timerDisplay33");
     
-  timerDisplay2.style.visibility = "visible";
-  timerDisplay2.style.display = "block";
+  timerDisplay33.style.visibility = "visible";
+  timerDisplay33.style.display = "block";
 
   // Phase 1: First 7 seconds - normal speed
   const normalSpeed = setInterval(() => {
@@ -767,7 +774,7 @@ function startTimer() {
       const fastSpeed = setInterval(() => {
         if (currentTime <= 0) {
           clearInterval(fastSpeed);
-          timerDisplay2.textContent = "Timer finished!";
+          timerDisplay33.textContent = "00:00";
              ins.innerText = "Click on the butyrometer to see the fat percent content percentage obtained by the experiment"
               isTimerFinished1 = true;
               f = 400;
@@ -777,7 +784,7 @@ function startTimer() {
         } else {
           const mins = Math.floor(currentTime / 60);
           const secs = currentTime % 60;
-          timerDisplay2.textContent = `Timer: ${mins}:${secs.toString().padStart(2, "0")}`;
+          timerDisplay33.textContent = `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
           currentTime--;
             ins.innerText = "Wait For 3 minutes to properly heating the butyrometer"
         }
@@ -785,7 +792,7 @@ function startTimer() {
     } else {
       const mins = Math.floor(currentTime / 60);
       const secs = currentTime % 60;
-      timerDisplay2.textContent = `Timer: ${mins}:${secs.toString().padStart(2, "0")}`;
+      timerDisplay33.textContent = `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
       currentTime--;
       secondsPassed++;
         ins.innerText = "Wait For 3 minutes to properly heat the butryometer"
@@ -800,10 +807,10 @@ function startTimer2() {
   let currentTime = 240; // 5 minutes = 300 secondsf
   console.log("12234342");
   let secondsPassed = 0;
-  const timerDisplay2 = document.getElementById("timerDisplay2");
+  const timerDisplay33 = document.getElementById("timerDisplay33");
     
-  timerDisplay2.style.visibility = "visible";
-  timerDisplay2.style.display = "block";
+  timerDisplay33.style.visibility = "visible";
+  timerDisplay33.style.display = "block";
 
   // Phase 1: First 7 seconds - normal speed
   const normalSpeed = setInterval(() => {
@@ -814,13 +821,16 @@ function startTimer2() {
       const fastSpeed = setInterval(() => {
         if (currentTime <= 0) {
           clearInterval(fastSpeed);
-          timerDisplay2.textContent = "Timer finished!";
+          timerDisplay33.textContent = "00:00";
               isTimerFinished = true;
+
+             
+
          ins.innerText = "Click on the open button of centrifuge to open the lid of centrifuge"
         } else {
           const mins = Math.floor(currentTime / 60);
           const secs = currentTime % 60;
-          timerDisplay2.textContent = `Timer: ${mins}:${secs.toString().padStart(2, "0")}`;
+          timerDisplay33.textContent = `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
           currentTime--;
            ins.innerText = "Wait For 4 minutes to complete the process of centrifugation"
         }
@@ -828,7 +838,7 @@ function startTimer2() {
     } else {
       const mins = Math.floor(currentTime / 60);
       const secs = currentTime % 60;
-      timerDisplay2.textContent = `Timer: ${mins}:${secs.toString().padStart(2, "0")}`;
+      timerDisplay33.textContent = `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
       currentTime--;
       secondsPassed++;
       ins.innerText = "Wait For 4 minutes to complete the process of centrifugation"

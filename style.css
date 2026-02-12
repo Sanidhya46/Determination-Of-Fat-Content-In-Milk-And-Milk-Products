@@ -573,7 +573,7 @@ left: 36.792%; */
     height: 6%;
     width: 2.51%;
         bottom:  11.0%;
-                 left: 54.0%;
+                 left: 57.7%;
     transition: all;
     transition:  1s;
     z-index: 1;
@@ -1133,18 +1133,34 @@ bottom: 5%; */
 #timerDisplay13,
 #timerDisplay23 {
     position: absolute;
-  color: rgb(89, 10, 10);
-  background-color: yellow ;
+  color: rgb(40, 237, 0);
+  
   font-weight: bold;
-  font-size: 1.4vw;
-  bottom: 83%;
+  font-size: 2.6vw;
+  bottom: 18.9%;
   width: 9%;
   opacity: 100%;
-  left: 0.5%;
+  left: 47.3%;
   z-index: 30;
   visibility: visible;
+  display: block;
   
   
+}
+
+#timerDisplay33 {
+  position: absolute;
+color: rgb(40, 237, 0);
+
+font-weight: bold;
+font-size: 2.6vw;
+bottom: 18.9%;
+width: 9%;
+opacity: 100%;
+left: 47.8%;
+z-index: 30;
+visibility: visible;
+display: block;
 }
 
 
@@ -1573,11 +1589,10 @@ bottom: 5%; */
     height: 23%;
     width: 12%;
     top: 68%;
-    left:38%;
+    left:32.4%;
     z-index: 20;
-   
-    
 }
+
 
 #water_beaker{
     position: absolute;
@@ -1585,7 +1600,7 @@ bottom: 5%; */
     height: 15%;
     width: 10%;
  
-    left: 39.6%;
+    left: 34%;
     z-index: 15;
     transition: all;
     transition: 1s;
@@ -1971,6 +1986,48 @@ bottom: 5%; */
   
 }
 
+#clock_familiar{
+  position: absolute;
+  height: 24%;
+  width: 10.5%;
+  top: 66%;
+  left: 62.1%;
+  z-index: 25;
+     transition: all;
+     
+  transition-duration: 1s
+
+  
+}
+
+#clock{
+  position: absolute;
+  height: 26%;
+  width: 12%;
+  top: 66%;
+  left: 44.1%;
+  z-index: 25;
+     transition: all;
+     
+  transition-duration: 1s
+
+  
+}
+
+#clock1{
+  position: absolute;
+  height: 26%;
+  width: 12%;
+  top: 66%;
+  left: 44.6%;
+  z-index: 25;
+     transition: all;
+     
+  transition-duration: 1s
+
+  
+}
+
 #butyrometer_cork_familiar{
   position: absolute;
   height: 8%;
@@ -2005,7 +2062,7 @@ bottom: 5%; */
   height: 58%;
   width: 28%;
   top: 34%;
-  left: 65%;
+  left: 70%;
   z-index: 2;
      transition: all;
      
@@ -2048,7 +2105,7 @@ bottom: 5%; */
   height: 30%;
   width: 18%;
   top: 61.5%;
-  left: 51%;
+  left: 50%;
   z-index: 2;
      transition: all;
      
@@ -2214,7 +2271,7 @@ bottom: 5%; */
     height: 0%;
     width: 0.6%;
    bottom: 20.5%;
-    left: 44.21%;
+    left: 39.21%;
     rotate: 0deg;
     transition: all;
     transition-duration: 1s;

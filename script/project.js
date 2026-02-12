@@ -50,6 +50,9 @@ let stp70 = document.querySelector("#stp70")
 let stp1000 = document.querySelector("#stp1000")
 let pipettesol = document.querySelector("#pipettesol")
 
+let rpmLabel = document.querySelector("#rpmLabel")
+
+
 
 let sulphuric = document.querySelector("#sulphuric")
 // let statuses = 0;
@@ -136,7 +139,7 @@ function start(){
            stp993.style.visibility = "visible";
            stp993.style.opacity =  "100%";
            straight_butyrometer_amyl.style.opacity = "0%";
-         
+         pipette.style.visibility = "hidden"
         startbutton.style.visibility="hidden"
          stp23.style.visibility="hidden"
          ins.innerText = "Click ON button of the water bath"
@@ -156,19 +159,22 @@ function start(){
               stp33.style.visibility = "visible";
        Set.style.visibility = "visible";
         ins.innerText = "Click on the pipette to draw 21.75 mL water and pour it into the another butyrometer"
-     
+        
     }else if(f===400){
         
         console.log("f in project js is ", f)
         stp13.style.visibility = "hidden";
         stp63.style.visibility = "hidden";
-
+        rpmLabel.style.display = "none";
+        timeDisplay.style.display = "none";
+        rpmDisplay.style.display = "none";
         startbutton.style.visibility="hidden";
         startbutton.style.opacity = "0%"
       stp32.style.visibility = "visible";
-         
+           stp32.style.display = "none"
             straight_butyrometer3.style.visibility =  "hidden";
               stp33.style.visibility = "hidden";
+              stp33.style.display = "none"
               ins.innerText = "Click on butyrometer to see the percent fat content present in the sample"
 
     }

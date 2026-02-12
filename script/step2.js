@@ -189,7 +189,8 @@ setOff3.addEventListener("click", () => {
     actualTempDisplay3.textContent = `${actualTemp}°C`;
 
     timerDisplay13.style.display = "none";
-    timerDisplay23.style.display = "none";
+    timerDisplay23.innerText = "05.00";
+    
 
     // ➤ Temperature increase (gradual then fast)
     let secondsPassed = 0;
@@ -296,7 +297,7 @@ setOff3.addEventListener("click", () => {
                         ins.innerText =  "Click on the Butyrometer to put on to the butyrometer stand for centrifugation"
                            
                            setTimeout(() => {
-     timerDisplay23.style.opacity = "0%";
+    //  timerDisplay23.style.opacity = "0%";
           }, 1000);
                                }, 10000);  
                                       setTimeout(() => {
@@ -328,6 +329,7 @@ tilted_butyrometer3.addEventListener("click", function() {
                                                 ins.innerText="click on NEXT button"
                                     startbutton.style.visibility="visible"
                                     startbutton.innerText="NEXT"
+                                    timerDisplay23.style.display ="none"
                                     
          
                }, 0);
@@ -366,13 +368,14 @@ function startTimer1() {
             const fastSpeed = setInterval(() => {
                 if (currentTime <= 7) {
                     clearInterval(fastSpeed);
-                    timerDisplay23.textContent = "Timer finished!";
+                    timerDisplay23.textContent = "00.00";
                       ins.innerText = "Click on butyrometer to take out from water bath and put into the stand ";
                     timervalue = 1;
                 } else {
                     const mins = Math.floor(currentTime / 60);
                     const secs = currentTime % 60;
-                    timerDisplay23.textContent = `Timer: ${mins}:${secs.toString().padStart(2, "0")}`;
+                    timerDisplay23.textContent = `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+
                     currentTime--;
                      ins.innerText = "Wait For 5 minutes to completely heat up the butryometer solution";
                
@@ -381,7 +384,7 @@ function startTimer1() {
         } else {
             const mins = Math.floor(currentTime / 60);
             const secs = currentTime % 60;
-            timerDisplay23.textContent = `Timer: ${mins}:${secs.toString().padStart(2, "0")}`;
+            timerDisplay23.textContent = `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
             currentTime--;
             secondsPassed++;
              ins.innerText = "Wait For 5 minutes to completely heat up the butryometer solution";

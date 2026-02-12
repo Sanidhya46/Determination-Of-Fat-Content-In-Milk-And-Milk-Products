@@ -2,14 +2,16 @@ const tooltip = document.getElementById("tooltip");
 
 const equipmentNames = {
     "water_bath_familiar": "Water Bath",
-    "butyrometer_cork_familiar": "Butyrometer Cork",
+    "butyrometer_cork_familiar": "Stopper",
     "milk_beaker_familiar": "Milk Beaker",
     "butyrometer_familiar": "Butyrometer",
     "pipette_familiar": "Pipette",
     "sulphuric-acid_familiar": "Sulphuric Acid",
     "isoamyl_familiar": "Isoamyl Alcohol",
     "centrifuge_familiar": "Centrifuge",
-    "sulphuric-acid_solution_familiar": "Sulphuric Acid Solution"
+    "sulphuric-acid_solution_familiar": "Sulphuric Acid Solution",
+    "clock_familiar": "Timer Clock"
+
   };
 
   familiar();
