@@ -119,55 +119,41 @@ centrifuge();
 
 function centrifuge() {
    console.log("heello")
-  closeButton.addEventListener("click", () => {
+   pipette45.addEventListener("click", () => {
    if(f===300){
      console.log("open  gate")
    f=301;
     console.log("close button");
-  ins.innerText = changeins22;
-    // 1. Simulate button press (reduce size temporarily)
-    closeButton.style.transform = "scale(0.7)";
-    closeButton.style.borderRadius = "30%";
+  ins.innerText =  "Click on the pipette to draw 21.75 mL water and pour it into the another butyrometer";
+  //   // 1. Simulate button press (reduce size temporarily)
+  //   closeButton.style.transform = "scale(0.7)";
+  //   closeButton.style.borderRadius = "30%";
+
+   pipette45.style.transform = "translate(750%, -50%) rotate(90deg)";
 
     setTimeout(() => {
-      closeButton.style.transform = "scale(1)";
-      closeButton.style.borderRadius = "40%";
+      // closeButton.style.transform = "scale(1)";
+      // closeButton.style.borderRadius = "40%";
+
+       pipette45.style.left = "50%";
 
       setTimeout(() => {
-        closeButton.style.visibility = "hidden";
-        openButton.style.visibility = "visible";
 
-        // Show open lid
-        centrifugeUpperLidOpen.style.visibility = "visible";
-        // Hide closed lid
-        centrifugeCloseLid.style.visibility = "hidden";
-        console.log("9900")
-
-        pipette45.addEventListener("click", function () {
-         if(f===301){
-         f=302
-          ins.innerText = changeins21;
-          console.log("hello112233");
-          pipette45.style.transform = "translate(750%, -50%) rotate(90deg)";
-         
-
-          setTimeout(() => {
-            pipette45.style.left = "50%";
-
-            setTimeout(() => {
-              const pipette_21ml = document.getElementById("pipette_21ml");
+        const pipette_21ml = document.getElementById("pipette_21ml");
               pipette45.style.bottom = "-22%";
-
-              setTimeout(() => {
-                pipette_21ml.style.height = "6.5%";
+        // closeButton.style.visibility = "hidden";
+        // openButton.style.visibility = "visible";
+        setTimeout(() => {
+             pipette_21ml.style.height = "6.5%";
                 water_beaker.style.height = "14.5%";
+          setTimeout(() => {
+       
 
-                setTimeout(() => {
-                  ins.innerText = "";
-                  pipette_21ml.style.bottom = "63.5%";
+              pipette_21ml.style.bottom = "63.5%";
                   pipette45.style.bottom = "21.0%";
 
-                  setTimeout(() => {
+
+                   setTimeout(() => {
                     pipette45.style.left = "87.2%";
                     pipette_21ml.style.left = "81.4%";
 
@@ -187,27 +173,101 @@ function centrifuge() {
                           setTimeout(() => {
                             pipette45.style.bottom = "21%";
 
-                            setTimeout(() => {
+       
+
+         setTimeout(() => {
                               pipette45.style.left = "40%";
 
                               setTimeout(() => {
                                 pipette45.style.transform = "translate(-520%, 0%)";
+                    ins.innerText = "Click on the stopper to close the butyrometer"
+        butyrometer_cork.addEventListener("click", function () {
+        //   **** pipette45.addEventListener("click", function () {
+         if(f===301){
+         f=302
+          // ins.innerText = changeins21;
+          console.log("hello112233");
+          // pipette45.style.transform = "translate(750%, -50%) rotate(90deg)";
+         
+          butyrometer_cork.style.bottom = "65%";
+
+          setTimeout(() => {
+            // pipette45.style.left = "50%";
+       
+            butyrometer_cork.style.left = "80.5%";
+            setTimeout(() => {
+              // const pipette_21ml = document.getElementById("pipette_21ml");
+              // pipette45.style.bottom = "-22%";
+
+              butyrometer_cork.style.bottom = "55.9%";
+
+              // setTimeout(() => {
+              //   // pipette_21ml.style.height = "6.5%";
+              //   // water_beaker.style.height = "14.5%";
+
+              //   ins.innerText = "Click on the open button of centrifuge to open the lid of centrifuge";
+
+              //   setTimeout(() => {
+                  // ins.innerText = "";
+                  // pipette_21ml.style.bottom = "63.5%";
+                  // pipette45.style.bottom = "21.0%";
+
+                  // setTimeout(() => {
+                  //   // pipette45.style.left = "87.2%";
+                  //   // pipette_21ml.style.left = "81.4%";
+
+                  //   setTimeout(() => {
+                  //     // pipette_21ml.style.bottom = "50.5%";
+                  //     // pipette45.style.bottom = "8.0%";
+
+                      // setTimeout(() => {
+                      //   // water_solution_centrifuge.style.visibility = "visible";
+                      //   // water_solution_centrifuge.style.height = "33%";
+                      //   // butyrometer_water_21ml.style.height = "27%";
+
+                      //   setTimeout(() => {
+                      //     // water_solution_centrifuge.style.opacity = "0%";
+                      //     // pipette_21ml.style.height = "0%";
+
+                      //     setTimeout(() => {
+                      //       // pipette45.style.bottom = "21%";
+
+                            // setTimeout(() => {
+                            //   // pipette45.style.left = "40%";
+
+                            //   setTimeout(() => {
+                            //     // pipette45.style.transform = "translate(-520%, 0%)";
 
                                 setTimeout(() => {
-                                  ins.innerText = changeins23;
-                                  butyrometer_cork.addEventListener("click", function () {
+                                  ins.innerText = "Click on the open button of centrifuge to open the lid of centrifuge      ";
+                                  closeButton.addEventListener("click", function () {
+                                    console.log("f for opening the centrifuge ", f)
                                     if(f==302){
                                        f=303
-                                    butyrometer_cork.style.bottom = "65%";
+
+
+                                    // butyrometer_cork.style.bottom = "65%";
+
+                                       closeButton.style.transform = "scale(0.7)";
+    closeButton.style.borderRadius = "30%";
 
                                     setTimeout(() => {
-                                      butyrometer_cork.style.left = "80.5%";
+                                      // butyrometer_cork.style.left = "80.5%";
+
+                                        closeButton.style.transform = "scale(1)";
+      closeButton.style.borderRadius = "40%";
 
                                       setTimeout(() => {
-                                        butyrometer_cork.style.bottom = "55.9%";
+                                        // butyrometer_cork.style.bottom = "55.9%";
+                                        closeButton.style.visibility = "hidden";
+        openButton.style.visibility = "visible";
+         centrifugeUpperLidOpen.style.visibility = "visible";
+       
+        centrifugeCloseLid.style.visibility = "hidden";
+        console.log("9900")
 
                                         setTimeout(() => {
-                                          ins.innerText = changeins24;
+                                          ins.innerText = "Click on the water filled butyromter to place it into the centrifuge";
                                        
                                           centrifugeDownWardLidOpen.style.visibility = "hidden";
                                           centrifugeTopFilling.style.opacity = "100%";
@@ -234,7 +294,7 @@ function centrifuge() {
 
                                                 setTimeout(() => {
                                                   water_butyrometer.style.transform = "translate(-155%,105%) rotate(17deg)";
-                                                  ins.innerText = changeins25;
+                                                  ins.innerText = "Click on the sample filled butyromter to place it into the centrifuge";
 
                                                   straight_butyrometer.addEventListener("click", function () {
                                                    if(f===304){
@@ -262,7 +322,7 @@ function centrifuge() {
                                                                              closeButton.style.visibility = "visible";
                                                              
 setTimeout(() => {
-  ins.innerText = changeins26;
+  ins.innerText = "Click on the On button of the centrifuge";
 
   offOnButton.addEventListener("click", () => {
    if(f===306){
@@ -404,302 +464,226 @@ setTimeout(() => {
          butyrometer3.style.opacity = "0%";
            butyrometer.style.visibility = "hidden";
 
-            straight_butyrometer.addEventListener("click", () => {
-                if(f===312){
-         f=313;
-   console.log("straight_butyrometer")
-     straight_butyrometer.style.transform = "translate(150%,-35%) rotate(-17deg)";
-                 setTimeout(() => {
-                   straight_butyrometer.style.transform = "rotate(0deg)";
-                    straight_butyrometer.style.height = "30%";
-                    straight_butyrometer.style.width = "2.1%";
-                    straight_butyrometer.style.transition = "1s";
-                   setTimeout(() => {
-                 straight_butyrometer.style.left = "72.19%";
-                    setTimeout(() => {
-                   straight_butyrometer.style.transform = "rotate(180deg)";
-                   
-                         setTimeout(() => {
-                            tilted_butyrometer1.style.visibility = "visible";
-                   straight_butyrometer.style.visibility = "hidden";
-                  
-                              setTimeout(() => {
-                                 tilted_butyrometer1.style.transition = "1s";
-                            tilted_butyrometer1.style.bottom = "10%";
-tempDisplay.style.visibility = "visible";
-ins.innerText = "Click on the off button of the water bath for heating the solution"
-
-                          // Water Bath Control Functions
-function pulse(element) {
-    element.style.transform = "scale(1.1)";
-    setTimeout(() => {
-        element.style.transform = "scale(1)";
-    }, 300);
-}
-
-function zoominout(element) {
-  element.classList.add("pulse-effect");
-  setTimeout(() => {
-    element.classList.remove("pulse-effect");
-  }, 300);
-}
-
-// Initialize water bath state
-let currentSampleTemp = 25;
-let isWaterBathOn = false;
-
-// Water bath switch control
-
-
-
-offSwitch.addEventListener("click", function () {
-   if(f===313){
-      f=314
-   offSwitch.style.visibility = "hidden";
- console.log("f=150");
-  pulse(offSwitch);
-  setTimeout(() => {
-    onswitch.click();
-    onswitch.style.opacity = "100%";
-   isWaterBathOn = true;
-     ins.innerText = "Click on the temp increase button to set the temperature to 65°C";
- }, 300);
-
-}else{console.log("error")}});
-offSwitch.addEventListener("click", () => {
-    if(f===314){
-      f=316;
-  pulse(offSwitch);
-  offSwitch.style.opacity = "100%";
-  offSwitch.style.opacity = "0%";
-
-  onswitch.style.borderRadius = "30%";
-  setTimeout(() => {
-    onswitch.style.borderRadius = "50%";
-  }, 300);
-
-  // Show temperatures
-  setTempDisplay.style.opacity = "100%";
-  actualTempDisplay.style.display = "block";
-   actualTempDisplay1.style.display = "block";
-  pulse(actualTempDisplay);
-  sampleTempDisplay.style.display = "block";
-    sampleTempDisplay1.style.display = "block";
-  pulse(sampleTempDisplay);
-    zoominout(sampleTempDisplay);
-  // Reset sample temperature display
-  sampleTempDisplay.textContent = "25°C";
-   ins.innerText = "Click on the temp increase button to set the temperature to 65°C for 3 minutes";
-//   ins.innerText= changeins13;
-}else{console.log("error")}});
-
-
-
-// Temperature increase control
-upOffSwitch.addEventListener("click", function() {
+           offSwitch.addEventListener("click", function () {
+            if(f===312){
+               f=313
+         //    offSwitch.style.visibility = "hidden";
+         //  console.log("f=150");
+         //   pulse(offSwitch);
+         console.log("f = 313")
+           setTimeout(() => {
+             onswitch.click();
+             onswitch.style.opacity = "100%";
+            isWaterBathOn = true;
+              ins.innerText = "Click on the temp increase button to set the temperature to 65°C";
+          }, 300);
+         
+         }else{console.log("error")}});
  
-   
-   
-    if (!isWaterBathOn) return;
-    
-    console.log("Increasing temperature");
-    pulse(upOffSwitch);
-    
-    // Show the "on" version of the switch temporarily
-
-    upOnSwitch.style.opacity = "1";
-    
-    // Increase temperature by 1°C each click up to 65°C
-    if (currentSampleTemp < 65) {
-        currentSampleTemp++;
-        sampleTempDisplay.textContent = `${currentSampleTemp}°C`;
+         offSwitch.addEventListener("click", () => {
+          if(f===313){
+            f=314;
+            console.log("f = 314")
+        pulse(offSwitch);
+        offSwitch.style.opacity = "100%";
+        offSwitch.style.opacity = "0%";
+      
+        onswitch.style.borderRadius = "30%";
+        setTimeout(() => {
+          onswitch.style.borderRadius = "50%";
+        }, 300);
+      
+        // Show temperatures
+        setTempDisplay.style.opacity = "100%";
+        actualTempDisplay.style.display = "block";
+         actualTempDisplay1.style.display = "block";
+        pulse(actualTempDisplay);
+        sampleTempDisplay.style.display = "block";
+          sampleTempDisplay1.style.display = "block";
         pulse(sampleTempDisplay);
-        
-        if (currentSampleTemp === 65) {
+          zoominout(sampleTempDisplay);
+        // Reset sample temperature display
+        sampleTempDisplay.textContent = "25°C";
+         ins.innerText = "Click on the temp increase button to set the temperature to 65°C for 3 minutes";
+      //   ins.innerText= changeins13;
+      }else{console.log("error")}});
+
+   let currentSampleTemp1 = 25;
+      upOffSwitch.addEventListener("click", () => {
+        if (f !== 314) return;
+        finalfatsolution.style.visibility = "hidden";
+        console.log("upoffswitch clicked");
+      
+        pulse(upOffSwitch);
+      
+        upOnSwitch.style.opacity = "1";
+          console.log( "current sample temp is ", currentSampleTemp1)
+        if (currentSampleTemp1 < 65) {
+          currentSampleTemp1++;
+         console.log(currentSampleTemp1)
+          sampleTempDisplay.textContent = `${currentSampleTemp1}°C`;
+          pulse(sampleTempDisplay);
+      
+          upOffSwitch.style.opacity = "0%";
+          upOnSwitch.style.display = "block";
+          upOnSwitch.style.borderRadius = "25%";
+      
+          ins.innerText = "Click on Set Button to set the temperature to 65°C";
+      
+          setTimeout(() => {
+            upOffSwitch.style.opacity = "100%";
+            upOnSwitch.style.borderRadius = "50%";
+          }, 300);
+      
+          if (currentSampleTemp1 === 65) {
             ins.innerText = "Temperature reached 65°C. Click SET to confirm.";
-        }
-    }
-    
-// Gradually increase sample temperature
-
-
-
-  if (currentSampleTemp < 65) {
-    // Show ON version briefly with pressed effect
-    upOnSwitch.style.display = "block";
-    upOnSwitch.style.borderRadius = "25%";
-       currentSampleTemp++;
-    // Hide OFF version temporarily
-    upOffSwitch.style.opacity ="0%";
-
-    // Show pulse effect and increase temp
-    pulse(upOnSwitch);
-    pulse(sampleTempDisplay);
-
-
-    sampleTempDisplay.textContent = `${currentSampleTemp}°C`;
-
-    // Instruction message
-    ins.innerText = "Click on Set Button to set the temperature to 65°C";
-
-    // After short time, restore OFF version, hide ON version, reset radius
-    setTimeout(() => {
-     
-      upOffSwitch.style.opacity = "100%";
-      upOnSwitch.style.borderRadius = "50%"; // reset radius
-    }, 300); // Duration of switch click simulation
-  }
-
-
-   tilted_butyrometer1.style.visibility = "hidden";
-                                               finalfatsolution.style.visibility = "visible"
-    ins.innerText = "Click on the set button to set the sample temp of water bath to 65°C for 3 minutes"
-setOff2.addEventListener("click", () => {
-    if(f===316){
-      f=317
-  console.log("setoff clicked")
-  pulse(setOff2);
-  setOn.style.display = "block";
-  setOn.style.opacity = "100%";
-  setOff2.style.opacity = "0%";
-  ins.innerText = `Temperature set to ${currentSampleTemp}°C`;
-
-  let actualTemp = 25;
-  let timerValue = 300; // 5 minutes
-  let currentTime = timerValue;
-  const timerDisplay1 = document.getElementById("timerDisplay1");
-  const timerDisplay2 = document.getElementById("timerDisplay2");
-  actualTempDisplay.textContent = `${actualTemp}°C`;
-
-// Instead of hiding them initially
-timerDisplay1.style.display = "block";
-timerDisplay2.style.display = "block";
-
-  // ➤ Temperature increase (gradual then fast)
-  let secondsPassed = 0;
-
-  const gradualTemp = setInterval(() => {
-    secondsPassed++;
-    if (actualTemp < currentSampleTemp) {
-      actualTemp++;
-      actualTempDisplay.textContent = `${actualTemp}°C`;
-    }
-
-    if (secondsPassed >= 1 || actualTemp >= currentSampleTemp) {
-      clearInterval(gradualTemp);
-
-      // ➤ Fast increase to 65°C
-      const fastIncrease = setInterval(() => {
-        if (actualTemp >= 65) {
-          clearInterval(fastIncrease);
-
-          // ➤ Start Timer Display Only AFTER Temperature Logic Ends
-           startTimer();
-             setTimeout(() => {
-           ins.innerText = "Click on the off button to half the water bath"
-             setTimeout(() => {
-                ins.innerText = "Click on the on button to off the water bath"
-           ins.innerText = "Click on the butyrometer to see the final fat content percentage"
-                  onswitch.addEventListener("click", () => {
-          
-                      if(f===316){
-      f=317
-                       if (!isTimerFinished) {
-    ins.innerText = "Please wait for the timer to finish before using water bath";
-    return;
-  }
-
-                     console.log("onswitch clicked")
-                    onswitch.style.visibility = "hidden";
-                    offSwitch.style.visibility = "visible";
-                     offSwitch.style.opacity  = "100%";
-                    tilted_butyrometer1.style.visibility = "hidden";
-                    timerDisplay2.style.visibility  = "hidden";
-                    timerDisplay2.style.opacity = "0%";
-                    timerDisplay1.style.visiblity = "hidden";
-                    actualTempDisplay.style.display = "none";
-   actualTempDisplay1.style.display = "none";
-
-  sampleTempDisplay.style.display = "none";
-    sampleTempDisplay1.style.display = "none";
-                    finalfatsolution.style.visibility = "visible";
-                               
-                         
-                          }console.log("error")}, 1000);
-                           setTimeout(() => {
-         
-           ins.innerText = "Click on the butyrometer to see the final fat content percentage"
-                  finalfatsolution.addEventListener("click", () => {
-                            if(f===317 && isTimerFinished){
-      f=318
-                     console.log("final fat clicked")
-                    finalfatsolution.style.bottom = "50%";
+            f = 316;
+          }
+        }else{console.log("the problem is in current sample temp to 65")}
+      
+        tilted_butyrometer1.style.visibility = "hidden";
+       
+        ins.innerText = "Click on the set button to set the sample temp of water bath to 65°C for 3 minutes";
+      });
+      
+      
+      setOff2.addEventListener("click", () => {
+        if (f !== 316) return;
+        f = 317;
+      
+        console.log("setoff clicked");
+      
+        pulse(setOff2);
+        setOn.style.display = "block";
+        setOn.style.opacity = "100%";
+        setOff2.style.opacity = "0%";
+      
+        ins.innerText = `Temperature set to ${currentSampleTemp1}°C`;
+      
+        let actualTemp = 25;
+        let timerValue = 300;
+        let currentTime = timerValue;
+      
+        const timerDisplay1 = document.getElementById("timerDisplay1");
+        const timerDisplay2 = document.getElementById("timerDisplay2");
+      
+        actualTempDisplay.textContent = `${actualTemp}°C`;
+        timerDisplay1.style.display = "block";
+        timerDisplay2.style.display = "block";
+      
+        let secondsPassed = 0;
+      
+        const gradualTemp = setInterval(() => {
+          secondsPassed++;
+      
+          if (actualTemp < currentSampleTemp1) {
+            actualTemp++;
+            actualTempDisplay.textContent = `${actualTemp}°C`;
+          }
+      
+          if (secondsPassed >= 1 || actualTemp >= currentSampleTemp) {
+            clearInterval(gradualTemp);
+      
+            const fastIncrease = setInterval(() => {
+              if (actualTemp >= 65) {
+                clearInterval(fastIncrease);
+      
+                
+      
+                setTimeout(() => {
+                  ins.innerText = "Click on the off button to half the water bath";
+      
+                  setTimeout(() => {
+                    ins.innerText = "Click on the straight butyrometer to put in on water bath";
+      
+                    straight_butyrometer.addEventListener("click", function () {
+                      if (f !== 317) return;
+                      
+                      straight_butyrometer.style.transform = "translate(150%,-35%) rotate(-17deg)";
+                      setTimeout(() => {
+                        straight_butyrometer.style.transform = "rotate(0deg)";
+                         straight_butyrometer.style.height = "30%";
+                         straight_butyrometer.style.width = "2.1%";
+                         straight_butyrometer.style.transition = "1s";
+                        setTimeout(() => {
+                      straight_butyrometer.style.left = "72.19%";
+                         setTimeout(() => {
+                        straight_butyrometer.style.transform = "rotate(180deg)";
+                        
                               setTimeout(() => {
-         
-              finalfatsolution.style.left = "45%";
-                     setTimeout(() => {
-                        finalfatsolution.style.bottom = "48%";
-                                 setTimeout(() => {
-           ins.innerText = "yellow layer represent the fat content";
-               finalfatsolution.style.height = "46%";
-                    finalfatsolution.style.width = "3.4%";
+                                 tilted_butyrometer1.style.visibility = "visible";
+                        straight_butyrometer.style.visibility = "hidden";
+                         f = 318;
+                                   setTimeout(() => {
+                                      tilted_butyrometer1.style.transition = "1s";
+                                 tilted_butyrometer1.style.bottom = "10%";
+     tempDisplay.style.visibility = "visible";
+     setTimeout(() => {
+      finalfatsolution.style.visibility = "visible"
+      tilted_butyrometer1.style.visibility = "hidden"
+      startbutton.innerText = "RESULT"
+     ins.innerText = "Click on the off button of the water bath for heating the solution"
+      startTimer();
+     
+      setTimeout(() => {
+       
+        setTimeout(() => {
+            
+         console.log("value now f is", f)
+
+        }, 1000);
+        }, 1000);
+      },1000);
+    }, 1000);
+  }, 1000);
+}, 1000);
+}, 1000);
+}, 1000);
+                     
                        
-                               
-                               setTimeout(() => {
-           ins.innerText = " Yellow layer represent the fat content The total fat content percentage is 3.5%";
-              alert("Experiment Ended :- The total Fat percentage content is 3.5%");
-                               
-                               },1000);           
-             }, 2000); 
-             }, 3000); 
-                         
-             }, 1000);
-                               
-                         
-                            }console.log("error") }, 1000);
-                          
-               }, 300);
-              }, 300);
-
-              
-              }, 300);
-        } else {
-          actualTemp++;
-          actualTempDisplay.textContent = `${actualTemp}°C`;
-        }
-      }, 25); // Fast increase  // 25
-    }
-  }, 1000); // Gradual increase  // 200
-
- 
-
-  // Reset UI visuals
-  setTimeout(() => {
-    setOff2.style.opacity = "100%";
-    setOn.style.display = "none";
-  }, 0);
-
-// Water bath heating function
-
-
-
-
-
-
-
- }else{console.log("error")}}, 1000)
-                               }, 1000)
-         
-                 }, 1000)  //
-                 }, 1000)
-                 }, 2000)
-                  
-                 }, 1000)
-                  
-                 }, 1000)
-
-
-            }else{console.log("no")}});
+                      
+      
+                      // onswitch.style.visibility = "hidden";
+                      // offSwitch.style.visibility = "visible";
+                      // offSwitch.style.opacity = "100%";
+      
+                      // tilted_butyrometer1.style.visibility = "hidden";
+                      // timerDisplay2.style.visibility = "hidden";
+                      // timerDisplay1.style.visibility = "hidden";
+      
+                      // actualTempDisplay.style.display = "none";
+                      // actualTempDisplay1.style.display = "none";
+                      // sampleTempDisplay.style.display = "none";
+                      // sampleTempDisplay1.style.display = "none";
+      
+                      
+                      f = 318;
+                      
+                      console.log("final f is ", f)
+                      ins.innerText = "click on the straight butyrometer to put into water bath"
+                    });
+      
+                  }, 1000);
+                }, 300);
+              } else {
+                actualTemp++;
+                actualTempDisplay.textContent = `${actualTemp}°C`;
+                console.log("actual temp is", f)
+                console.log("final f is" , f)
+              }
+            }, 100);
+          }
+        }, 1000);
+      
+        setTimeout(() => {
+          setOff2.style.opacity = "100%";
+          setOn.style.display = "none";
+        }, 0);
+      });
+      
+      
+      
+      
 
           
          
@@ -721,35 +705,43 @@ timerDisplay2.style.display = "block";
 
                                                          }else{console.log("no")}})}, 1000);
                                                     }, 0);
-    }, 1000);
+    }, 0);
   }else{console.log("no")}});
-}, 1000);
-}, 1000);
+}, 0);
+}, 0);
   });
 }
-}, 1000);
-}, 1000);
-}, 1000);
-}, 1000);
+}, 0);
+}, 0);
+}, 0);
+}, 0);
 }else{console.log("no")}}, 1000);
-}, 1000);
-}, 1000);
-}, 1000);
-}, 1000);
-}, 1000);
-}, 1000);
-}, 1000);
-}, 1000);
-}, 1000);
-}, 1000);
-}, 1000);
-          
-}, 1000);
+}, 0);
+}, 0);
+}, 0);
+
+
+
+
          
-}}, 1000);
+}}, 0);
+}, 0);
+}, 0);
+}, 0);
+}, 0);
+}, 0);
+
+
+}, 0);
+}, 0);
+
+}, 0);
+          
+}, 0);
+
       
-}, 1000);
-}, 1000);
+}, 0);
+}, 0);
 
   }else{console.log("no")}});
 }
@@ -757,7 +749,7 @@ timerDisplay2.style.display = "block";
 
 
 function startTimer() {
-   isTimerFinished = false; 
+   isTimerFinished1 = false; 
   let currentTime = 180; // 5 minutes = 300 secondsf
   console.log("12234342");
   let secondsPassed = 0;
@@ -777,7 +769,10 @@ function startTimer() {
           clearInterval(fastSpeed);
           timerDisplay2.textContent = "Timer finished!";
              ins.innerText = "Click on the butyrometer to see the fat percent content percentage obtained by the experiment"
-              isTimerFinished = true;
+              isTimerFinished1 = true;
+              f = 400;
+              startbutton.style.visibility = "visible";
+             
         
         } else {
           const mins = Math.floor(currentTime / 60);
@@ -821,7 +816,7 @@ function startTimer2() {
           clearInterval(fastSpeed);
           timerDisplay2.textContent = "Timer finished!";
               isTimerFinished = true;
-         ins.innerText = "Click on the open button to open the lid of centrifuge"
+         ins.innerText = "Click on the open button of centrifuge to open the lid of centrifuge"
         } else {
           const mins = Math.floor(currentTime / 60);
           const secs = currentTime % 60;
@@ -840,4 +835,37 @@ function startTimer2() {
     }
   }, 1000); // Normal speed   //1000
 }
-                           
+        
+
+
+
+    finalfatsolution.addEventListener("click", () => {
+      if (f === 400 && isTimerFinished){
+    
+      console.log("final fat clicked");
+    
+      finalfatsolution.style.bottom = "50%";
+    
+      setTimeout(() => {
+        finalfatsolution.style.left = "45%";
+    
+        setTimeout(() => {
+          finalfatsolution.style.bottom = "25%";
+    
+          setTimeout(() => {
+            ins.innerText = "Yellow layer represent the fat content";
+    
+            finalfatsolution.style.height = "75%";
+            finalfatsolution.style.width = "7%";
+    
+            setTimeout(() => {
+              ins.innerText = "Yellow layer represent the fat content. The total fat content percentage is 3.5%";
+              alert("Experiment Ended :- The total Fat percentage content is 3.5%");
+            }, 1000);
+          }, 1000);
+          }, 2000);
+        }, 3000);
+      }else{console.log("the error is f is not 402 or istimer finished not true")}
+      }, 1000);
+    
+   

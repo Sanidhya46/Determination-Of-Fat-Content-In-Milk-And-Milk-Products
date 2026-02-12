@@ -1,51 +1,51 @@
-// (() => {
-//   const nextButton = document.getElementById('nextButton');
-//   const initialContent = document.getElementById('initialContent');
-//   const stepListContent = document.getElementById('stepListContent');
-//   const stepsContainer = document.getElementById('stepsContainer');
-//   const finalButton = document.getElementById('finalButton');
+const tooltip = document.getElementById("tooltip");
 
-//   // Steps array - add as many steps as you want here
-//   const stepLabels = [
-//     "Chemical Preparation",
-//     "Sample Preparation",
-//     "Heating in Water Bath",
-//     "Centrifugation",
-//     "Result Observation",
-//   ];
+const equipmentNames = {
+    "water_bath_familiar": "Water Bath",
+    "butyrometer_cork_familiar": "Butyrometer Cork",
+    "milk_beaker_familiar": "Milk Beaker",
+    "butyrometer_familiar": "Butyrometer",
+    "pipette_familiar": "Pipette",
+    "sulphuric-acid_familiar": "Sulphuric Acid",
+    "isoamyl_familiar": "Isoamyl Alcohol",
+    "centrifuge_familiar": "Centrifuge",
+    "sulphuric-acid_solution_familiar": "Sulphuric Acid Solution"
+  };
 
-//   // Show initial next button after 2 seconds
-//   setTimeout(() => {
-//     nextButton.style.display = 'inline-block';
-//   }, 2000);
+  familiar();
+function familiar() {
+    if (f === 1001){
+        f = 1002;
+   console.log("familiar function running")
+        document.querySelectorAll(".equipment").forEach(item => {
 
-//   nextButton.addEventListener('click', () => {
-//     // Hide initial content, show steps content
-//     initialContent.style.display = 'none';
-//     stepListContent.style.display = 'block';
+  item.addEventListener("mousemove", (e) => {
 
-//     // Clear previous steps if any
-//     stepsContainer.innerHTML = '';
+    const name = equipmentNames[item.id];
+    tooltip.innerText = name;
 
-//     // Animate steps in sequence
-//     stepLabels.forEach((label, index) => {
-//       const stepDiv = document.createElement('div');
-//       stepDiv.className = 'step-item';
-//       stepDiv.innerHTML = `<div class="step-number">${index + 1}</div><div>${label}</div>`;
-//       stepsContainer.appendChild(stepDiv);
-//       setTimeout(() => {
-//         stepDiv.classList.add('visible');
-//       }, 500 * (index + 1));
-//     });
+    // Convert mouse position to %
+    const xPercent = (e.clientX / window.innerWidth) * 100;
+    const yPercent = (e.clientY / window.innerHeight) * 100;
 
-//     // Show final button after all steps animated
-//     setTimeout(() => {
-//       finalButton.style.display = 'inline-block';
-//     }, 500 * stepLabels.length + 500);
-//   });
+    tooltip.style.left = (e.clientX + 10) + "px";  // smaller = closer
+  tooltip.style.top  = (e.clientY - 40) + "px";
+  tooltip.style.opacity = "1";
+  });
 
-//   finalButton.addEventListener('click', () => {
-//     alert("Proceeding to Experiment Step 3");
-//     // Add further logic or navigation here as needed
-//   });
-// })();
+  item.addEventListener("mouseleave", () => {
+    tooltip.style.opacity = "0";
+  });
+
+});
+    }else{console.log("now the value of f is", f)}
+}
+
+function closePopup() {
+    document.getElementById("familiarPopup").style.display = "none";
+    f = 1003;
+    startbutton.style.visibility = "visible";
+    f = 0;
+   
+  }
+  

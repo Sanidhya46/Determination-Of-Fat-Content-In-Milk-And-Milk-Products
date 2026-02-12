@@ -11,7 +11,7 @@
   <main class="main">
     <div class="header" id="header">
           <h1 id="ins">Instructions :-</h1>    
-          <h1 id="text"> lets start the experiment</h1>
+          <h1 id="text"> Make yourself familiar with the instruments & glassware</h1>
         </div>
 
         
@@ -65,7 +65,33 @@
     
     </div>
 
-    
+    <div id="stp1000">  
+      <div id="tooltip"></div>
+
+      <div id="familiarPopup" class="popup-card">
+        <h2 class="exp-title">Determination of Fat Content in Milk and Milk Products</h2>
+      
+        <h4 class="step-title">Step 1: Get Familiar with the Equipment</h4>
+      
+        <p class="tip-text">
+          Move your cursor over each equipment to see its name and learn its use.
+        </p>
+      
+        <button onclick="closePopup()">Got it</button>
+      </div>
+      
+
+      
+      <img id="water_bath_familiar" class="equipment" src="images/water_bath_familiar.png" alt="Milk Beaker" />
+      <img id="butyrometer_cork_familiar" class="equipment" src="images/butyrometer_cork_familiar.png" alt="Milk Beaker" />
+      <img id="milk_beaker_familiar" class="equipment" src="images/milk_beaker_familiar.png" alt="Milk Beaker" />
+      <img id="butyrometer_familiar" class="equipment" src="images/butyrometer_familiar.png" alt="Milk Beaker" />
+      <img id="pipette_familiar" class="equipment" src="images/pipette_familiar.png" alt="Milk Beaker" />
+      <img id="sulphuric-acid_familiar" class="equipment" src="images/sulphuric-acid_familiar.png" alt="Milk Beaker" />
+      <img id="isoamyl_familiar" class="equipment" src="images/isoamyl_familiar.png" alt="Milk Beaker" />
+      <img id="centrifuge_familiar" class="equipment" src="images/centrifuge_familiar.png" alt="Milk Beaker" />
+      <img id="sulphuric-acid_solution_familiar" class="equipment" src="images/sulphuric-acid_solution_familiar.png" alt="Milk Beaker" />
+    </div>
 
 
 
@@ -181,8 +207,8 @@
     <div id="setTempDisplay">25°C</div>
    
   <!-- Second: Value Divs -->
-  <div id="actualTempDisplay1">Bath Temp</div>
-  <div id="sampleTempDisplay1">Sample Temp</div>
+  <div id="actualTempDisplay1">SV</div>
+  <div id="sampleTempDisplay1">PV</div>
 
 
 
@@ -229,8 +255,8 @@
 
     <div id="setTempDisplay3">25°C</div>
 
-    <div id="actualTempDisplay13">Bath Temp</div>
-    <div id="sampleTempDisplay13">Sample Temp</div>
+    <div id="actualTempDisplay13">SV</div>
+    <div id="sampleTempDisplay13">PV</div>
 
 </div>
 
@@ -355,7 +381,7 @@
     <div id="heelo" >Hello:</div>
 </div>
 
-
+</div id = "stp118">
       <img id="pipette_milk" src="images/pipette_milk_10.75.png" alt="Liquid in Pipette" />
        <img id="butyrometer_liquid" class="butyrometer_liquid" src="images/butyrometer_h2so4.png" alt="Butyrometer with Acid" />
 
@@ -377,7 +403,7 @@
    
  
          <img id="tilted_butyrometer_amyl" class="tilted_butyrometer" src="images/tilted butyrometer.png" alt="Empty Butyrometer" />
-
+ </div>
 
 
 
@@ -406,6 +432,9 @@
     </main>
     <script src="./script/project.js"></script>
     <script src="./script/step1.js"></script>
+    <script src="./script/step0.js"></script>
+    
+    
     <script src="./script/step2.js"></script>
     <script src="./script/step3.js"></script>
      <script src="./script/step4.js"></script>

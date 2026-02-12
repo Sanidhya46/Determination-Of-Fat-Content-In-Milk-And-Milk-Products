@@ -27,9 +27,9 @@ const sampleTempDisplay13 = document.getElementById("sampleTempDisplay13");
 const actualTempDisplay13 = document.getElementById("actualTempDisplay13");
 
 let changeins12 = "Click on the ON button to start the water bath.";
-let changeins13 = "Click on the Temp increase button to increase temperature of water bath to 65°C.";
-let changeins14 = "Wait until water bath reaches 65°C.";
-let changeins15 = "Click on butyrometer to insert into the bath.";
+let changeins13 = " Click on the increase button symbol to set temperature of water bath at 65°C";
+// let changeins14 = "Wait until water bath reaches 65°C.";
+let changeins15 = "Click on butyrometer to place it into the water bath";
 let changeins16 = "Wait for 5 minutes.";
 // let changeins4 = "Click on the pipette to transfer the milk to the butyrometer."
 
@@ -160,7 +160,7 @@ upOffSwitch3.addEventListener("click", () => {
         sampleTempDisplay3.textContent = `${currentSampleTemp}°C`;
          
         // Instruction message
-       ins.innerText = "Increase the sample temp of water bath to 65°C"
+       ins.innerText = "Click on the increase button symbol to set temperature of water bath at 65°C"
 
         // After short time, restore OFF version, hide ON version, reset radius
         setTimeout(() => {
@@ -169,7 +169,7 @@ upOffSwitch3.addEventListener("click", () => {
             upOffSwitch3.style.opacity = "100%";
             upOnSwitch3.style.borderRadius = "50%"; // reset radius
         }, 300); // Duration of switch click simulation
-    }else{ f=1500 , ins.innerText = "Click on the set button to set the temperature to 65°C"}
+    }else{ f=1500 , ins.innerText = "Click on the SET button and wait to reach the desired temperature of 65°C "}
 });
 
 setOff3.addEventListener("click", () => {
@@ -179,7 +179,7 @@ setOff3.addEventListener("click", () => {
     setOn3.style.display = "block";
     setOn3.style.opacity = "100%";
     setOff3.style.opacity = "0%";
-    ins.innerText = `Temperature set to ${currentSampleTemp}°C`;
+    // ins.innerText = `Temperature set to ${currentSampleTemp}°C`;
 
     let actualTemp = 25;
     let timerValue = 300; // 5 minutes
@@ -204,10 +204,10 @@ setOff3.addEventListener("click", () => {
 
         if (secondsPassed >= 7 || actualTemp >= currentSampleTemp) {
             clearInterval(gradualTemp);
-  ins.innerText = "wait to temperature reaches to 65°C ";
+//   ins.innerText = "wait to temperature reaches to 65°C ";
             // ➤ Fast increase to 65°C
             const fastIncrease = setInterval(() => {
-                 ins.innerText = "wait to temperature reaches to 65°C ";
+                //  ins.innerText = "wait to temperature reaches to 65°C ";
                 if (actualTemp >= 65) {
                     
                     clearInterval(fastIncrease);
@@ -218,7 +218,7 @@ setOff3.addEventListener("click", () => {
                 } else {
                     actualTemp++;
                     actualTempDisplay3.textContent = `${actualTemp}°C`;
-                     ins.innerText = "wait to temperature reaches to 65°C ";
+                    //  ins.innerText = "wait to temperature reaches to 65°C ";
                    
                 }
             }, 400); // Fast increase  // 25
@@ -245,7 +245,7 @@ setOff3.addEventListener("click", () => {
         straight_butyrometer3.style.visibility = "visible";
         straight_butyrometer3.style.visibility = "visible";
         // straight_butyrometer_amyl3.style.visibility = "hidden";
-        ins.innerText = changeins14;
+        // ins.innerText = changeins14;
         console.log("hello");
         straight_butyrometer3.style.bottom = "45%";
             setTimeout(() => {
@@ -325,24 +325,24 @@ tilted_butyrometer3.addEventListener("click", function() {
         setTimeout(() => {
           straight_butyrometer3.style.bottom = "12%";
           f=300;
-                                                ins.innerText="click on Next button"
+                                                ins.innerText="click on NEXT button"
                                     startbutton.style.visibility="visible"
-                                    startbutton.innerText="Next" 
+                                    startbutton.innerText="NEXT"
                                     
          
-               }, 1000);
-      },1000);
-      }, 1000);                
-      }, 1000);                
+               }, 0);
+      },0);
+      }, 0);                
+      }, 0);                
 }});
-                        }, 1000);           
-                    }, 1000);  
-                    }, 1000);
-                }, 1000);    //3000
-            }, 1000);
-              }, 1000);
+                        }, 0);           
+                    }, 0);  
+                    }, 0);
+                }, 0);    //3000
+            }, 0);
+              }, 0);
     }else{console.log("qwerty")}});
-    }, 1000);
+    }, 0);
 }else{console.log("eerror")}});
 
 
@@ -367,7 +367,7 @@ function startTimer1() {
                 if (currentTime <= 7) {
                     clearInterval(fastSpeed);
                     timerDisplay23.textContent = "Timer finished!";
-                      ins.innerText = "Click on the butryometer to place butyometer into butyromeeter stand for the centrifugation";
+                      ins.innerText = "Click on butyrometer to take out from water bath and put into the stand ";
                     timervalue = 1;
                 } else {
                     const mins = Math.floor(currentTime / 60);
