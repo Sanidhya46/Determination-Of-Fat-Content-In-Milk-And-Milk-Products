@@ -55,6 +55,8 @@ let rpmLabel = document.querySelector("#rpmLabel")
 
 
 let sulphuric = document.querySelector("#sulphuric")
+let stp171 = document.querySelector("#stp171")
+
 // let statuses = 0;
 let f=1000;
 // let trial=1;
@@ -98,7 +100,7 @@ function start(){
        f=1;
        console.log("just after f = 1" , f)
        pipette1();
-        ins.innerText="Click on The pipette to measure 10 ml of h2so4 solution"
+        ins.innerText="Click on The pipette to draw 10 mL of H₂SO₄ solution"
        
   
     }
@@ -138,6 +140,7 @@ function start(){
           startbutton.style.visibility="hidden"
            stp993.style.visibility = "visible";
            stp993.style.opacity =  "100%";
+           timerDisplay23.style.visibility = "visible"
            straight_butyrometer_amyl.style.opacity = "0%";
          pipette.style.visibility = "hidden"
         startbutton.style.visibility="hidden"
@@ -157,8 +160,14 @@ function start(){
            stp993.style.visibility = "hidden";
             straight_butyrometer3.style.visibility =  "hidden";
               stp33.style.visibility = "visible";
-       Set.style.visibility = "visible";
+      
+       timerDisplay33.style.visibility = "visible"
         ins.innerText = "Click on the pipette to draw 21.75 mL water and pour it into the another butyrometer"
+        clock1.style.display = "none";
+        clock1.style.visibility = "hidden"
+        clock.style.display = "none"
+        clock.style.visibility = "hidden"
+        timerDisplay33.style.visibility = "hidden"
         
     }else if(f===400){
         
@@ -175,8 +184,20 @@ function start(){
             straight_butyrometer3.style.visibility =  "hidden";
               stp33.style.visibility = "hidden";
               stp33.style.display = "none"
-              ins.innerText = "Click on butyrometer to see the percent fat content present in the sample"
-
+              ins.innerText = "Click on the butyrometer to take out from the water bath and put in the stand"
+          stp171.style.visibility= "visible"
+          timelabel.style.visibility = "hidden"
+          f = 400.2
+    }else if(f===400.5){
+    
+      stp23.style.visibility = "hidden"
+      stp993.style.visibility = "hidden"
+      startbutton.style.visibility = "hidden"
+      ins.innerText = "Click on butyrometer to see the percent fat content present in the sample"
+      f = 401;
+      waterbath_front4.style.visibility = "hidden"
+      waterbath_front4.style.display = "none"
+          finalresult();
     }
  
 }
@@ -247,8 +268,8 @@ const tiltedsol = document.querySelector('#tiltedsol');
 
 
 
-let changeins = "Click the pipette to draw 10 ml of H₂SO₄."
-let changeins1 = "Click on pipette again to pour H2SO4 solution to butyrometer" 
+let changeins = "Click the pipette to draw 10 ml of H₂SO₄ solution."
+let changeins1 = "Click on pipette again to pour H₂SO₄ solution to butyrometer" 
 let changeins2 = "Click on the pipette to draw 10.75 ml of milk."
 let changeins3 = "Click on the pipette to transfer the milk to the butyrometer."
 let changeins4 = "Click on the cap of isoamyl alcohol bottle to open it"
@@ -285,7 +306,7 @@ function pipette1() {
       pipette.addEventListener("click", function () {
         if(f==2){
             
-        ins.innerText = "Click on The pipette to draw 10 mL of H2SO4 solution"
+        // ins.innerText = "Click the pipette to draw 10 ml of H₂SO₄ solution"
         // Reset rotation of pipette
         pipette.style.rotate = "0deg";
 
@@ -317,10 +338,10 @@ function pipette1() {
                          document.getElementById('pipette').onclick = pipette2;
                         f = 3;
                     
-                     }, 0);
-                },0);
-            }, 0);
-        }, 0);
+                     }, 1000);
+                }, 1000);
+            }, 1000);
+        }, 1000);
     }else{console.log("nothing2")}}
 )}else{console.log("nothing")}};
 
@@ -383,12 +404,12 @@ function pipette2() {
                                                 //     ins.innerText = changeins; // Update instruction message
                                                 // }, 1000);
                                                 f=5;
-                                            }, 0);
-                                        }, 0);
-                                    }, 0);
-                                },0);
-                            }, 0);
-                        }, 0);
+                                            }, 1000);
+                                        }, 1000);
+                                    }, 1000);
+                                }, 1000);
+                            }, 1000);
+                        }, 1000);
     }else{console.log("ghnta")}
 }
 
@@ -423,11 +444,11 @@ function pipette3() {
                     document.getElementById('pipette').onclick = pipette4;
                     // Step 5: Move pipette to butyrometer area
                     // pipette.style.transform = "translate(38.6%,150%)";
-                    f=7
+                    f=7;
                     
-                },0);
-            },0);
-        }, 0);
+                }, 1000);
+            }, 1000);
+        }, 1000);
     
 }
 }
@@ -488,17 +509,17 @@ function pipette4() {
                         f=100;
                           
 
-                }, 0);
+                }, 1000);
 
                     
-                }, 0);
+                }, 1000);
 
                     
-                }, 0);
+                }, 1000);
                     
-                }, 0);
-            }, 0);
-        }, 0)
+                }, 1000);
+            }, 1000);
+        }, 1000)
     
 }
 }
@@ -704,30 +725,30 @@ function pipette5() {
                                     startbutton.innerText="NEXT" 
          
 
-                                                          },  0);  
-                                                          },  0);  
+                                                          },  1000);  
+                                                          },  1000);  
                                                                    
 
-                                                          },  0);  
-                                                          },  0);  
+                                                          },  1000);  
+                                                          },  1000);  
                                            
-                                          },  0);    
+                                          },  1000);    
                                              
-                                          },  0);    
+                                          },  1000);    
                                                      
-                                              },  0);   //2000 
+                                              },  1000);   //2000 
                                            
-                                          },  0);    
+                                          },  1000);    
                                              
-                                          },  0);   
+                                          },  1000);   
                                               
                                              
-                                          },  0);                 
+                                          },  1000);                 
                               
                               }else{console.log("error")}              
-                                }, 0);
+                                }, 1000);
                                         });                 
-                                },  0);
+                                },  1000);
 
 
                             //                butyrometer.addEventListener("click", function () {
@@ -826,89 +847,89 @@ function pipette5() {
 
                             
                                         
-                                },  0);
-                                },  0);
-                                },  0);
+                                },  1000);
+                                },  1000);
+                                },  1000);
                               }else{console.log("error")}
                          });
               
-                  }, 0);
+                  }, 1000);
        
             
 
 
               
-                  }, 0);
+                  }, 1000);
        
        
             
 
 
                       
-                  }, 0);
+                  }, 1000);
        
             
 
 
               
-                  }, 0);
-              
-       
-            
-
-
-              
-                  }, 0);
-       
-            
-
-
-              
-                  }, 0);
+                  }, 1000);
               
        
             
 
 
               
-                  }, 0);
+                  }, 1000);
        
             
 
 
               
-                  }, 0);
+                  }, 1000);
               
        
             
 
 
               
-                  }, 0);
+                  }, 1000);
+       
+            
+
+
+              
+                  }, 1000);
+              
+       
+            
+
+
+              
+                  }, 1000);
                           
 
 
               
-                   }, 0);
+                   }, 1000);
        
             
 
 
               
-             }, 0);
+             }, 1000);
               
-                  }, 0);
-                  }, 0);
-                  }, 0);
-                  }, 0);
+                  }, 1000);
+                  }, 1000);
+                  }, 1000);
+                  }, 1000);
                     }else{console.log("error")}
                 });
-          }, 0);
-          }, 0);
+          }, 1000);
+          }, 1000);
 
        
 
-    }, 0);
+    }, 1000);
   }else{console.log("error")}
 });   
         
@@ -916,546 +937,4 @@ function pipette5() {
     
 }
 
-
-
-//   pipette
- // Uncomment and modify as needed:
-        // setTimeout(function () {
-        //     pipette.style.rotate = "0deg";
-        //     pipette.style.transform = "translate(0%,-150%)";
-        //     sc.style.transform = "translate(0%,-50%)";
-        // }, 1000);
-
-
-
-
-
-
-
-// function drawWater() {
-//     if (f === 2) {
-//         f = 3;
-
-//         m100.style.transitionDuration = "0s";
-//         m100.style.top = "60%";
-//         m100.style.left = "20%";
-//         m100.style.transform = "rotate(0deg)";
-//         m100.style.height = "0%";
-
-//         setTimeout(() => {
-//             m100.style.transitionDuration = "1s";
-//             m100.style.top = "30%";
-//             m100.style.left = "-15%";
-//             m100.style.transform = "rotate(-25deg)";
-//             m100.style.height = "35%";
-
-//             setTimeout(() => {
-//                 m100.style.top = "60%";
-//                 m100.style.left = "20%";
-//                 m100.style.transform = "rotate(0deg)";
-//                 m100.style.height = "0%";
-
-//                 setTimeout(() => {
-//                     ins.innerText = changeins2;
-//                 }, 1000);
-//             }, 1500);
-//         }, 100);
-//     }
-// }
-
-// function drawWater() {
-//     if (f === 2) {
-//         m100.style.transform = "translate(-140%,-80%) rotate(-25deg)";
-//         m100.style.height = "35%";
-//         setTimeout(() => {
-//             m100.style.transform = "translate(0,0) rotate(0)";
-//             m100.style.height = "0%";
-//             f = 3;
-//             ins.innerText = changeins2;
-//         }, 1500);
-//     }
-// }
-
-// function transferAcid() {
-//     if (f === 3) {
-//         pe1.style.transform = "translate(-130%,-70%) rotate(-20deg)";
-//         pAcid.style.height = "0%"; // simulate pour
-//         bAcid.style.height = "20%"; // show acid in butyrometer
-//         setTimeout(() => {
-//             pe1.style.transform = "translate(0,0) rotate(0)";
-//             f = 4;
-//             ins.innerText = changeins3;
-//         }, 1500);
-//     }
-// }
-
-// function drawMilk() {
-//     if (f === 4) {
-//         pm.style.transform = "translate(-125%,-65%) rotate(-20deg)";
-//         mbOv.style.height = "27%"; // simulate milk draw
-//         setTimeout(() => {
-//             pm.style.transform = "translate(0,0) rotate(0)";
-//             mbOv.style.height = "0%";
-//             f = 5;
-//             ins.innerText = changeins4;
-//         }, 1500);
-//     }
-// }
-
-// function transferMilk() {
-//     if (f === 5) {
-//         pm.style.transform = "translate(-135%,-75%) rotate(-20deg)";
-//         bAcid.style.height = "45%"; // assume milk + acid
-//         setTimeout(() => {
-//             pm.style.transform = "translate(0,0) rotate(0)";
-//             ins.innerText = "Step complete. Click Next.";
-//         }, 1500);
-//     }
-// }
-
-
-// function diswater(){
-//     if(f==1){
-//         f=2
-//         dwater.style.transform="translate(-150%,-80%) rotate(-25deg)"
-//         dsol.style.transform=dsoltest1
-//         // "translate(-222%,-120%) rotate(-25deg)"
-//         setTimeout(function(){
-//             ms.style.visibility="visible"
-//             setTimeout(function(){
-//                 msol.style.height=msolheight
-//                 dsol.style.height=dsolheight
-//                 dsol.style.transform=dsoltest2
-//                 // "translate(-219%,-130%) rotate(-25deg)"
-//                 setTimeout(function(){
-//                     // mcyl.style.transitionDuration="0s"
-//                     // msol.style.transitionDuration="0s"
-//                     // msol.style.visibility="hidden"
-//                     // mtest.style.visibility="visible"
-//                     // mcyl.style.visibility="hidden"
-//                     // m100.style.transitionDuration="1s"
-//                     dwater.style.transform="translate(0%,0%) rotate(0deg)"
-//                     dsol.style.transform="translate(0%,0%) rotate(0deg)"
-//                     ms.style.visibility="hidden"
-//                     f=5
-//                     ins.innerText=changeins4
-//                     if(dessicator==1){
-//                         f=3
-//                         ins.innerText=changeins
-//                     }
-//                     // else{
-//                     // }
-//                 },1000)
-//             },500)
-//         },1000)
-
-//     }
-// }
-
-
-// function measure(){
-//     if(f==3){
-//         f=4
-//         m100.style.transitionDuration="1s"
-//         m100.style.top="24%"
-//         mcyl.style.top="24%"
-//         msol.style.bottom=msolbottom
-//         setTimeout(function(){
-//             m100.style.left=mtestleft
-//             mcyl.style.left=mtestleft
-//             msol.style.left=msolleft
-//             setTimeout(function(){
-//                 m100.style.rotate="25deg"
-//                 mcyl.style.rotate="25deg"
-//                 msol.style.rotate="25deg"
-//                 // mtestleft+=0.1
-//                 m100.style.left=mtestleft1
-//                 mcyl.style.left=mtestleft1
-//                 ms.style.left=msleft
-//                 ms.style.top="27.5%"
-//                 ms.style.height="55%"
-//                 setTimeout(function(){
-//                     m100.style.transitionDuration="0s"
-//                     ms.style.visibility="visible"
-//                     msol.style.visibility="visible"
-//                     mcyl.style.visibility="visible"
-//                     m100.style.visibility="hidden"
-//                     msol.style.transitionDuration="1s"
-//                     mcyl.style.transitionDuration="1s"
-//                     setTimeout(function(){
-//                         msol.style.height="0%"
-//                         msol.style.left=msolleft1
-//                         msol.style.bottom=msolbottom1
-//                         m100.style.rotate="0deg"
-//                         dessi.style.height="4.7%"
-//                         setTimeout(function(){
-//                             ms.style.visibility="hidden"
-//                             mcyl.style.left="8%"
-//                             mcyl.style.rotate="0deg"
-//                             msol.style.rotate="0deg"
-//                             msol.style.left="9.1%"
-//                             m100.style.left="8%"
-//                             setTimeout(function(){
-//                                 mcyl.style.top="60%"
-//                                 ms.style.top="55%"
-//                                 msol.style.bottom="11%"
-//                                 m100.style.top="60%"
-//                                 ms.style.left="10.7%"
-//                                 ms.style.height="31%"
-//                                 f=1
-//                                 ins.innerText=changeins4
-//                                 dessiicator1()
-//                                 ins.innerText=changeins1
-//                                 if(dessicator==6){
-//                                     ins.innerText="click on Next button"
-//                                     startbutton.style.visibility="visible"
-//                                     startbutton.innerText="Next"
-//                                 }
-//                             },1000)
-//                         },1000)
-//                     },100)
-//                 },1000)
-//             },1000)
-//         },1000)
-//     }
-// }
-
-
-
-
-
-
-
-
-// // function pipette1(){
-// //     if(f==5){
-// //         f=6
-// //         pipette.style.rotate="0deg"
-// //         pipette.style.transform="translate(0%,-250%)"
-// //         setTimeout(function(){
-// //             pipette.style.transform="translate(190%,-250%)"
-// //             sc.style.transform="translate(0%,-50%)"
-// //             setTimeout(function(){
-// //                 sc.style.transform="translate(50%,-50%) rotate(60deg)"
-// //                 pipette.style.transform="translate(190%,-100%)"
-// //                 setTimeout(function(){
-// //                     psol.style.height=psolheight
-// //                     ss.style.height=ssolheight
-// //                     setTimeout(function(){
-// //                         pipette.style.transform="translate(190%,-250%)"
-// //                         psol.style.bottom="58%"
-// //                         sc.style.transform="translate(0%,-50%) rotate(0deg)"
-// //                         setTimeout(function(){
-// //                             pipette.style.transform="translate(-650%,-250%)"
-// //                             psol.style.left="10.0%"
-// //                             sc.style.transform="translate(0%,0%)"
-// //                             setTimeout(function(){
-// //                                 pipette.style.transform="translate(-650%,-150%)"
-// //                                 psol.style.bottom="32.5%"
-// //                                 setTimeout(function(){
-// //                                     psol.style.height="0%"
-// //                                     msol.style.height=msolheight
-// //                                     setTimeout(function(){
-// //                                         pipette.style.transform="translate(-650%,-250%)"
-// //                                         psol.style.left="20.9%"
-// //                                         setTimeout(function(){
-// //                                             pipette.style.transform="translate(0%,-250%)"
-// //                                             psol.style.bottom="21%"
-// //                                             setTimeout(function(){
-// //                                                 pipette.style.transform="translate(0%,0%)"
-// //                                                 pipette.style.rotate="-90deg"
-// //                                                 if(trial==0){
-// //                                                     trial=1
-// //                                                     f=5
-// //                                                     psolheight="10%"
-// //                                                     msolheight="6.5%"
-// //                                                     ins.innerText=changeins2
-// //                                                     if(dessicator==4 || dessicator==5){
-// //                                                         ins.innerText=changeins3
-// //                                                         psolheight="18.5%"
-// //                                                         msolheight="8.6%"
-// //                                                     }
-// //                                                 }
-// //                                                 else if(trial==1){
-// //                                                     if(dessicator==4){
-// //                                                         f=5
-// //                                                         psolheight="10%"
-// //                                                         msolheight="12%"
-// //                                                         ins.innerText=changeins2
-// //                                                         trial=2
-// //                                                     }
-// //                                                     else if(dessicator==5){
-// //                                                         console.log(msolheight)
-// //                                                         f=5
-// //                                                         if(msolheight=="8.6%"){
-// //                                                             trial=1
-// //                                                             psolheight="18.5%"
-// //                                                             msolheight="15%"
-// //                                                             ins.innerText=changeins3
-// //                                                         }
-// //                                                         else{
-// //                                                             psolheight="10%"
-// //                                                             msolheight="18.5%"
-// //                                                             ins.innerText=changeins2
-// //                                                             trial=2
-
-// //                                                         }
-// //                                                     }
-// //                                                     // else if(dessicator==2){
-// //                                                     //     f=5
-// //                                                     //     psolheight="18.5%"
-// //                                                     //     msolheight="5%"
-// //                                                     // }
-// //                                                     else{
-// //                                                         f=1
-// //                                                         ins.innerText=changeins1
-// //                                                         msolheight="4%"
-// //                                                     }
-// //                                                     console.log(f)
-// //                                                 }
-// //                                                 else{
-// //                                                     f=3
-// //                                                     ins.innerText=changeins
-// //                                                      msolheight="4%"
-// //                                                      console.log(f)
-// //                                                 }
-// //                                             },1000)
-// //                                         },1000)
-// //                                     },1000)
-// //                                 },1000)
-// //                             },1000)
-// //                         },1000)
-// //                     },1000)
-// //                 },1000)
-// //             },1000)
-// //         },1000)
-// //     }
-// // }
-
-
-
-
-
-
-//         ////////////////////////////////////////////////////////    new pipette function     //////////////////////////////////////////////////////////
-
-
-
-
-
-
-// var new1 
-
-
-// ///////////////////////////////////////////    NEW PIPETTE FUNCTION     ///////////////////////////////////
-
-
-// function pipette1(){
-//     if(f==5){
-//         f=6
-//         pipette.style.rotate="0deg"
-//         pipette.style.transform="translate(0%,-150%)"
-//         sc.style.transform="translate(0%,-50%)"
-//         setTimeout(function(){
-//             pipette.style.transform="translate(40%,-150%)"
-//             sc.style.transform="translate(50%,-50%) rotate(60deg)"
-//             setTimeout(function(){
-//                 pipette.style.transform="translate(40%,-65%)"
-//                 setTimeout(function(){
-//                     psol.style.height=psolheight
-//                     ss.style.height=ssolheight
-//                     setTimeout(function(){
-//                         pipette.style.transform="translate(40%,-150%)"
-//                         psol.style.bottom=psolbottom1
-//                         setTimeout(function(){
-//                             sc.style.transform="translate(0%,-50%) rotate(0deg)"
-//                             pipette.style.transform="translate(-250%,-150%)"
-//                             psol.style.left="10.75%"
-//                             setTimeout(function(){
-//                                 pipette.style.transform="translate(-250%,-125%) rotate(12deg)"
-//                                 sc.style.transform="translate(0%,0%)"
-//                                 psol.style.rotate="12deg"
-//                                 psol.style.bottom=psolbottom
-//                                 psol.style.left=psolleft
-//                                 // awm.style.visibility="visible"
-//                                 setTimeout(function(){
-//                                     psol.style.height="0%"
-//                                     psol.style.opacity="0%"
-//                                     msol.style.height="27%"
-//                                     psol.style.left="9.16%"
-//                                     setTimeout(function(){
-//                                         // msol.style.transitionDuration="0s"
-//                                         // msol.style.visibility="hidden"
-//                                         // mcyl.style.transitionDuration="0s"
-//                                         // mcyl.style.visibility="hidden"
-//                                         // mtest.style.visibility="visible"
-//                                         if(dessicator==2){
-//                                             // psol.src="images/pippete-solution.png";
-//                                         }
-//                                         // setTimeout(function(){
-//                                             pipette.style.transform="translate(-250%,-150%) rotate(0deg)"
-//                                             setTimeout(function(){
-//                                                 pipette.style.transform="translate(0%,-150%)"
-//                                                 setTimeout(function(){
-//                                                     pipette.style.transform="translate(0%,0%)"
-//                                                     pipette.style.rotate="-90deg"
-//                                                     psol.style.left="20.9%"
-//                                                     psol.style.rotate="0deg"
-//                                                     psol.style.bottom="13%"
-//                                                     psol.style.opacity="100%"
-//                                                     setTimeout(function(){
-//                                                         f=3
-//                                                         ins.innerText=changeins
-//                                                     },1000)
-//                                                 },1000)
-//                                             },1000)
-//                                         // },1000)
-//                                     },1000)
-//                                 },1000)
-//                             },1000)
-//                         },1000)
-//                     },1000)
-//                 },1000)
-
-//             },1000)
-//         },1000)
-//     }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function dessiicator1(){
-//     if(dessicator==1){
-//         dessicator=2
-//         dessi=d4
-//         dsol.style.height="20%"
-//         dsolheight="18%"
-//         dsoltest1="translate(-219%,-130%) rotate(-25deg)"
-//         dsoltest2="translate(-218%,-145%) rotate(-25deg)"
-//         mtest=m100
-//         mtestleft="47.4%"
-//         mtestleft1="47.5%"
-//         msolleft="48.5%"
-//         msolleft1="46.2%"
-//         msolbottom="47.2%"
-//         msolbottom1="49%"
-//         msleft="53.6%"
-//         msolheight="24%"
-//         ssolheight="15%"
-//         changeins="Click on measuring cylinder to place this measured solution into S2 labelled dessicator"
-
-
-//     }
-//     else if(dessicator==2){
-//         dessicator=3
-//         dessi=d3
-//         dsol.style.height="18%"
-//         dsolheight="16%"
-//         dsoltest1="translate(-218%,-145%) rotate(-25deg)"
-//         dsoltest2="translate(-215%,-163%) rotate(-25deg)"
-//         mtest=m100
-//         mtestleft="59.4%"
-//         mtestleft1="59.5%"
-//         msolleft="60.5%"
-//         msolleft1="58.2%"
-//         msleft="65.6%"
-//         msolbottom="47.2%"
-//         msolbottom1="49%"
-//         msolheight="18.5%"
-//         ssolheight="13%"
-//         psolheight="10.6%"
-//         psolbottom="38.3%"
-//         psolbottom1="48.1%"
-//         psolleft="9.44%"
-//         trial=0
-//         psol.src="images/pippete-solution30ml.png";
-//         changeins="Click on measuring cylinder to place this measured solution into S3 labelled dessicator"
-//         changeins1 = "Click on distilled water bottle to measure 70mL of distilled water" 
-//         changeins4 = "Click on pipette to take 30mL sulphuric acid and pour it in measuring cylinder"
-        
-//     }
-
-//     else if(dessicator==3){
-//         dessicator=4
-//         dessi=d2
-//         dsol.style.height="16%"
-//         dsolheight="14%"
-//         dsoltest1="translate(-215%,-163%) rotate(-25deg)"
-//         dsoltest2="translate(-210%,-188%) rotate(-25deg)"
-//         mtest=m100
-//         mtestleft="71.4%"
-//         mtestleft1="71.5%"
-//         msolleft="72.5%"
-//         msolleft1="70.2%"
-//         msleft="77.6%"
-//         msolbottom="47.2%"
-//         msolbottom1="49%"
-//         msolheight="12%"
-//         ssolheight="11%"
-//         psolheight="16.1%"
-//         psolbottom1="48.1%"
-//         psolbottom="38.3%"
-//         psolleft="9.7%"
-//         trial=0
-//         psol.src="images/pippete-solution50ml.png";
-//         changeins="Click on measuring cylinder to place this measured solution into S4 labelled dessicator"
-//         changeins1 = "Click on distilled water bottle to measure 50mL of distilled water" 
-//         changeins4 = "Click on pipette to take 50mL sulphuric acid and pour it in measuring cylinder"
-//     }
-    
-
-//     else if(dessicator==4){
-//         dessicator=5
-//         dessi=d1
-//         dsol.style.height="14%"
-//         dsolheight="13%"
-//         dsoltest1="translate(-210%,-188%) rotate(-25deg)"
-//         dsoltest2="translate(-210%,-203%) rotate(-25deg)"
-//         mtest=m100
-//         mtestleft="83.4%"
-//         mtestleft1="83.5%"
-//         msolleft="84.5%"
-//         msolleft1="82.2%"
-//         msleft="89.6%"
-//         msolbottom="47.2%"
-//         msolbottom1="49%"
-//         msolheight="6.7%"
-//         ssolheight="9%"
-//         psolheight="21.5%"
-//         psolbottom="38.3%"
-//         psolbottom1="48.1%"
-//         psolleft="9.93%"
-//         trial=0
-//         psol.src="images/pippete-solution.png";
-//         changeins="Click on measuring cylinder to place this measured solution into S5 labelled dessicator"
-//         changeins1 = "Click on distilled water bottle to measure 30mL of distilled water" 
-//         changeins4 = "Click on pipette to take 70mL sulphuric acid and pour it in measuring cylinder"
-//     }
-    
-
-//     else if(dessicator=="5"){
-//         dessicator=6
-//         f=100
-//     }
-
-
-// }
 

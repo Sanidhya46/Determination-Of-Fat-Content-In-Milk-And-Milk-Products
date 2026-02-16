@@ -103,14 +103,14 @@ function zoominout(element) {
 offSwitch3.addEventListener("click", function() {
       if (f === 150) {
         f = 151;
-        
+        clock.style.visibility = "visible"
     offSwitch3.style.visibility = "hidden";
     console.log("f=150");
     pulse(offSwitch3);
     setTimeout(() => {
         onSwitch3.click();
         onSwitch3.style.opacity = "100%";
-    }, 1000);
+    }, 0);
 
 }else{console.log("nulll error")}});
 
@@ -122,7 +122,7 @@ onSwitch3.addEventListener("click", () => {
     onSwitch3.style.borderRadius = "30%";
     setTimeout(() => {
         onSwitch3.style.borderRadius = "50%";
-    }, 1000);
+    }, 0);
 
     // Show temperatures
     setTempDisplay3.style.opacity = "100%";
@@ -224,7 +224,7 @@ setOff3.addEventListener("click", () => {
                 }
             }, 400); // Fast increase  // 25
         }
-    }, 1000); // Gradual increase  // 200
+    }, 200); // Gradual increase  // 200
 
     // Reset UI visuals
     setTimeout(() => {
@@ -296,10 +296,8 @@ setOff3.addEventListener("click", () => {
 });
                         ins.innerText =  "Click on the Butyrometer to put on to the butyrometer stand for centrifugation"
                            
-                           setTimeout(() => {
-    //  timerDisplay23.style.opacity = "0%";
-          }, 1000);
-                               }, 10000);  
+                     
+                               }, 1000);  
                                       setTimeout(() => {
 
                       
@@ -332,19 +330,19 @@ tilted_butyrometer3.addEventListener("click", function() {
                                     timerDisplay23.style.display ="none"
                                     
          
-               }, 0);
-      },0);
-      }, 0);                
-      }, 0);                
+               }, 1000);
+      }, 1000);
+      }, 1000);                
+      }, 1000);                
 }});
-                        }, 0);           
-                    }, 0);  
-                    }, 0);
-                }, 0);    //3000
-            }, 0);
-              }, 0);
+                        }, 1000);           
+                    }, 1000);  
+                    }, 1000);
+                }, 1000);    //3000
+            }, 1000);
+              }, 1000);
     }else{console.log("qwerty")}});
-    }, 0);
+    }, 1000);
 }else{console.log("eerror")}});
 
 
@@ -414,12 +412,12 @@ setButtonHolder.addEventListener("click", () => {
     const actualTempInterval = setInterval(() => {
       if (actualTemp < 65) {
         actualTemp++;
-        actualTempDisplay.innerText = `Actual Temp: ${actualTemp}°C`;
+      
       } else {
         clearInterval(actualTempInterval);
       }
     }, 70);
-  }, 1000);
+  }, 0);
 });
 
 
