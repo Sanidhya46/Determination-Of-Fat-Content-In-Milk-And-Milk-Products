@@ -479,13 +479,13 @@ setTimeout(() => {
        currentTime += intervalTime / 1000; // in seconds
      
        let rpm = 0;
-     
+     rpmDisplay.innerText = "0"
        // ⬆ Rising phase (0 → 1100)
        if (currentTime <= riseTime) {
          let progress = currentTime / riseTime;
          rpm = maxRPM * progress;
        }
-     
+       
        // ➡ Steady phase
        else if (currentTime > riseTime && currentTime <= totalTime - fallTime) {
          rpm = maxRPM;
@@ -501,11 +501,23 @@ setTimeout(() => {
        rpmDisplay.innerText = rpm;
      
        // ⏱ timeDisplay: 04.00 → 0.00 in 25s
-       timeDisplayValue = startTimeDisplay * (1 - currentTime / totalTime);
-       timeDisplayValue = Math.max(0, timeDisplayValue);
-     
-       let seconds = timeDisplayValue.toFixed(2).padStart(5, "0");
-       timeDisplay.innerText = seconds;
+// ⏱ Timer should start ONLY after RPM reaches 1100 (after riseTime)
+  
+if (currentTime <= riseTime) {
+  // During rising RPM → keep timer frozen
+  timeDisplay.innerText = startTimeDisplay.toFixed(2);
+} 
+else {
+  // After RPM reached max → start countdown
+  let effectiveTime = currentTime - riseTime;
+  let effectiveTotal = totalTime - riseTime;
+
+  timeDisplayValue = startTimeDisplay * (1 - effectiveTime / effectiveTotal);
+  timeDisplayValue = Math.max(0, timeDisplayValue);
+
+  let seconds = timeDisplayValue.toFixed(2).padStart(5, "0");
+  timeDisplay.innerText = seconds;
+}
      
        // ⛔ Stop
        if (currentTime >= totalTime) {
