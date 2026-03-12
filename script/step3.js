@@ -33,7 +33,7 @@ const timeIncreaseButton = document.getElementById("Time_increase_switch");
 
 const timerDisplay33 = document.getElementById("timerDisplay33");
 const finalfatsolution = document.getElementById("finalfatsolution");
-
+const result_box = document.getElementById("result_box");
 
 // const onSwitchHolder = document.getElementById("onSwitchHolder");
 const setOff2 = document.getElementById("setOff2");
@@ -1012,8 +1012,8 @@ function finalresult() {
             finalfatsolution.style.width = "6%";
           
             setTimeout(() => {
-              ins.innerText = "Yellow layer represent the fat content. The total fat content percentage is 3.5%";
-              alert("Experiment Ended :- The total Fat percentage content is 3.5%");
+              ins.innerText = "Observe the level of yellow layer in the butyrometer";
+              result_box.style.visibility = "visible";
             
             }, 1000);
           }, 1000);

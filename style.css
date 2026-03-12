@@ -721,12 +721,25 @@ left: 36.792%; */
     width: 2.0%;
     bottom: 10.1%;
     left: 72.2%;
- 
     opacity: 100%;
-  
     z-index: 19;
       visibility: hidden;
       transition: 1s;
+  }
+
+   #result_box{
+  position: absolute;
+    height: 6.0%;
+    width: 18.0%;
+    bottom: 60.1%;
+    left: 22.2%;
+    opacity: 100%;
+     font-size: 1.6rem;
+    z-index: 19;
+      visibility: hidden;
+      transition: 1s;
+      border: 0.3rem solid #f2b705;
+    background-color: #fff8dc;
   }
 
     #tilted_butyrometer1{

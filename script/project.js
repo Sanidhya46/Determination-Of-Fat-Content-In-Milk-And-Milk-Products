@@ -49,6 +49,7 @@ let stp32 = document.querySelector("#stp32")
 let stp70 = document.querySelector("#stp70")
 let stp1000 = document.querySelector("#stp1000")
 let pipettesol = document.querySelector("#pipettesol")
+const workingTable = document.getElementById("workingtable");
 
 let rpmLabel = document.querySelector("#rpmLabel")
 
@@ -194,6 +195,7 @@ function start(){
       stp993.style.visibility = "hidden"
       startbutton.style.visibility = "hidden"
       ins.innerText = "Click on butyrometer to see the percent fat content present in the sample"
+      workingTable.src = "images/bgblue.png";
       f = 401;
       waterbath_front4.style.visibility = "hidden"
       waterbath_front4.style.display = "none"
@@ -873,6 +875,11 @@ function pipette5() {
 
               
                   }, 1000);
+      
+                  }, 1000);
+ 
+
+                  }, 1000);
               
        
             
@@ -885,51 +892,38 @@ function pipette5() {
 
 
               
-                  }, 0);
+                  }, 1000);
               
        
             
 
 
               
-                  }, 0);
-       
-            
-
-
-              
-                  }, 0);
-              
-       
-            
-
-
-              
-                  }, 0);
+                  }, 1000);
                           
 
 
               
-                   }, 0);
+                   }, 1000);
        
             
 
 
               
-             }, 0);
+             }, 1000);
               
-                  }, 0);
-                  }, 0);
-                  }, 0);
-                  }, 0);
+                  }, 1000);
+                  }, 1000);
+                  }, 1000);
+                  }, 1000);
                     }else{console.log("error")}
                 });
-          }, 0);
-          }, 0);
+          }, 1000);
+          }, 1000);
 
        
 
-    }, 0);
+    }, 1000);
   }else{console.log("error")}
 });   
         
