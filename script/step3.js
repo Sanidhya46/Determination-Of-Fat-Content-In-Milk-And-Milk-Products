@@ -143,7 +143,7 @@ function centrifuge() {
    pipette45.style.transform = "translate(750%, -50%) rotate(90deg)";
 
     setTimeout(() => {
-      // closeButton.style.transform = "scale(1)";
+      // closeButton.alertstyle.transform = "scale(1)";
       // closeButton.style.borderRadius = "40%";
 
        pipette45.style.left = "53%";
