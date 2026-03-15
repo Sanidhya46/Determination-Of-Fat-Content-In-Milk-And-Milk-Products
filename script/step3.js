@@ -163,7 +163,7 @@ function centrifuge() {
               pipette_21ml.style.bottom = "63.5%";
                   pipette45.style.bottom = "21.0%";
 
-
+ 
                    setTimeout(() => {
                     pipette45.style.left = "87.2%";
                     pipette_21ml.style.left = "81.4%";
@@ -474,61 +474,62 @@ setTimeout(() => {
      
      let startTimeDisplay = 4.0; // 04.00 start
      let timeDisplayValue = startTimeDisplay;
-     
-     let timer = setInterval(() => {
-       currentTime += intervalTime / 1000; // in seconds
-     
+
        let rpm = 0;
-     rpmDisplay.innerText = "0"
-       // ⬆ Rising phase (0 → 1100)
-       if (currentTime <= riseTime) {
-         let progress = currentTime / riseTime;
-         rpm = maxRPM * progress;
-       }
-       
-       // ➡ Steady phase
-       else if (currentTime > riseTime && currentTime <= totalTime - fallTime) {
-         rpm = maxRPM;
-       }
-     
-       // ⬇ Falling phase (1100 → 0)
-       else {
-         let fallProgress = (currentTime - (totalTime - fallTime)) / fallTime;
-         rpm = maxRPM * (1 - fallProgress);
-       }
-     
-       rpm = Math.max(0, Math.round(rpm));
-       rpmDisplay.innerText = rpm;
-     
-       // ⏱ timeDisplay: 04.00 → 0.00 in 25s
-// ⏱ Timer should start ONLY after RPM reaches 1100 (after riseTime)
-  
+ let timer = setInterval(() => {
+  currentTime += intervalTime / 1000; // in seconds
+
+
+
+  // ⬆ Rising phase (0 → 1100)
+  if (currentTime <= riseTime) {
+    let progress = currentTime / riseTime;
+    rpm = maxRPM * progress;
+  }
+  // ➡ Steady phase (RPM stays 1100 while timer runs)
+  else if (currentTime > riseTime && currentTime <= totalTime) {
+    rpm = maxRPM;
+  }
+
+  rpm = Math.max(0, Math.round(rpm));
+  rpmDisplay.innerText = rpm;
+
+  // Timer logic (starts counting down after riseTime)
+ let timeDisplayValue;
 if (currentTime <= riseTime) {
-  // During rising RPM → keep timer frozen
-  timeDisplay.innerText = startTimeDisplay.toFixed(2);
-} 
-else {
-  // After RPM reached max → start countdown
+  timeDisplayValue = startTimeDisplay;
+} else if (currentTime <= totalTime) {
   let effectiveTime = currentTime - riseTime;
   let effectiveTotal = totalTime - riseTime;
-
   timeDisplayValue = startTimeDisplay * (1 - effectiveTime / effectiveTotal);
-  timeDisplayValue = Math.max(0, timeDisplayValue);
-
-  let seconds = timeDisplayValue.toFixed(2).padStart(5, "0");
-  timeDisplay.innerText = seconds;
 }
-     
-       // ⛔ Stop
-       if (currentTime >= totalTime) {
-         clearInterval(timer);
-         rpmDisplay.innerText = 0;
-         timeDisplay.innerText = "00.00";
-         f = 311.5;
-         ins.innerText = "Click on the OPEN LID button to open the lid of centrifuge"
-       }
-     
-     }, intervalTime);
+
+// Clamp and force exact zero if we slightly overshoot
+if (currentTime >= totalTime) {
+  timeDisplayValue = 0; // ✅ Force exact zero
+}
+
+timeDisplay.innerText = timeDisplayValue.toFixed(2).padStart(5, "0");
+
+  // ⬇ After timer reaches 0 → start decreasing RPM
+  if (timeDisplayValue === 0 ) {
+    clearInterval(timer); // stop main timer
+
+    // Start RPM fall from 1100 → 0
+    let rpmFallTimer = setInterval(() => {
+      rpm -= 10; // adjust speed of decrease
+      rpm = Math.max(0, rpm);
+      rpmDisplay.innerText = rpm;
+
+      if (rpm === 0) {
+        clearInterval(rpmFallTimer);
+        timeDisplay.innerText = "00.00";
+        f = 311.5;
+        ins.innerText = "Click on the OPEN LID button to open the lid of centrifuge";
+      }
+    }, 50);
+  }
+}, intervalTime);
      
 
 
@@ -807,7 +808,7 @@ else {
 }, 1000);
 } else if (!isTimerFinished) {
     ins.innerText = "Please wait for the timer to finish before opening";
-  }else{ins.innerText = "Click on the butyromter to see the final fat content percentage"}}, 0);
+  }else{console.log("hello world f", f)}}, 0);
     }else{console.log("centrifuge not open because the value of f is" , f)};
   })
 
